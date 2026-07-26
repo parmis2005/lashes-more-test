@@ -113,6 +113,28 @@ export function IconChevronRight({ className }: { className?: string }) {
   );
 }
 
+export function IconGift({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
+      <rect x="4" y="9" width="16" height="11" rx="1.5" stroke="currentColor" strokeWidth="1.5" />
+      <path d="M3 9h18v3H3z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+      <path d="M12 9v11" stroke="currentColor" strokeWidth="1.5" />
+      <path
+        d="M12 9H8.5a2.25 2.25 0 1 1 0-4.5C10.5 4.5 12 6.5 12 9Z"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M12 9h3.5a2.25 2.25 0 1 0 0-4.5C13.5 4.5 12 6.5 12 9Z"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
 export function IconSparkle({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">

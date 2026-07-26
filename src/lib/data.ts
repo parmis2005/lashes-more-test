@@ -12,6 +12,7 @@ export const site = {
   instagramHandle: "@lashesandmore_wuppertal",
   facebookUrl: "https://www.facebook.com/moslashesandmore/",
   facebookHandle: "Lashes&more",
+  giftCardUrl: "https://salonkee.de/salon/lashesmore/gift-card",
 } as const;
 
 export type Location = {
