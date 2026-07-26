@@ -45,23 +45,30 @@ export default function Gallery() {
         </p>
       </div>
 
-      <div className="mt-14 columns-2 gap-4 sm:columns-3 lg:columns-4">
+      <div className="mt-14 grid grid-cols-2 gap-4 auto-rows-[160px] sm:grid-cols-3 sm:gap-5 sm:auto-rows-[200px] lg:grid-cols-4 lg:auto-rows-[220px]">
         {galleryImages.map((image, index) => (
           <button
             key={image.src}
             type="button"
             onClick={() => setActiveIndex(index)}
-            className="group relative mb-4 block w-full overflow-hidden rounded-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+            className={`group relative overflow-hidden rounded-2xl shadow-sm ring-1 ring-ink/5 transition-all duration-300 hover:shadow-xl hover:ring-gold/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold ${
+              image.featured ? "col-span-2 row-span-2" : "col-span-1 row-span-1"
+            }`}
           >
             <Image
               src={image.src}
               alt={image.alt}
-              width={480}
-              height={600}
-              sizes="(min-width: 1024px) 22vw, (min-width: 640px) 30vw, 46vw"
-              className="w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              fill
+              sizes="(min-width: 1024px) 24vw, (min-width: 640px) 32vw, 48vw"
+              className="object-cover transition-transform duration-500 ease-out group-hover:scale-110"
             />
-            <span className="absolute inset-0 bg-ink/0 transition-colors duration-300 group-hover:bg-ink/10" />
+            <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/0 to-ink/0 opacity-70 transition-opacity duration-300 group-hover:opacity-90" />
+            <span className="absolute left-3 top-3 rounded-full bg-cream/90 px-3 py-1 text-[10px] font-medium uppercase tracking-wider text-ink/70 backdrop-blur-sm">
+              {image.location}
+            </span>
+            <span className="absolute inset-x-0 bottom-0 translate-y-1 p-4 text-left text-xs leading-snug text-cream/90 transition-transform duration-300 group-hover:translate-y-0 sm:text-sm">
+              {image.alt}
+            </span>
           </button>
         ))}
       </div>

@@ -63,7 +63,7 @@ export default function Hero() {
         </div>
 
         <div className="relative">
-          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[2rem] shadow-2xl shadow-ink/10 sm:aspect-[5/6]">
+          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[2rem] shadow-2xl shadow-ink/10 ring-1 ring-ink/5 sm:aspect-[5/6]">
             <Image
               src="/images/hero.jpg"
               alt="Empfangsbereich von Lashes&more in Wuppertal"
@@ -72,6 +72,8 @@ export default function Hero() {
               sizes="(min-width: 1024px) 40vw, 90vw"
               className="object-cover"
             />
+            <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/30 via-transparent to-transparent" />
+            <span className="pointer-events-none absolute inset-0 rounded-[2rem] ring-1 ring-inset ring-cream/10" />
           </div>
           <div className="absolute -bottom-6 -left-6 hidden rounded-2xl bg-ink px-6 py-5 text-cream shadow-xl sm:block">
             <p className="font-serif text-3xl font-semibold text-gold">{ratingSummary.average}</p>

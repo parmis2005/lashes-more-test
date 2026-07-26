@@ -1,28 +1,35 @@
 import Image from "next/image";
 import { academyNote } from "@/lib/data";
+import { IconSparkle } from "./icons";
 
 export default function About() {
   return (
     <section id="ueber-uns" className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28 lg:px-10">
-      <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-        <div className="grid grid-cols-2 gap-4">
-          <div className="relative mt-8 aspect-[3/4] overflow-hidden rounded-2xl shadow-lg">
+      <div className="grid items-center gap-16 lg:grid-cols-2 lg:gap-20">
+        <div className="relative mb-16 sm:mb-20 lg:mb-0">
+          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[2rem] shadow-xl shadow-ink/10">
             <Image
               src="/images/gallery/studio-1-flur.jpg"
               alt="Eingangsbereich von Studio 1, Anhalter Straße 8"
               fill
-              sizes="(min-width: 1024px) 25vw, 45vw"
+              sizes="(min-width: 1024px) 40vw, 90vw"
               className="object-cover"
             />
           </div>
-          <div className="relative aspect-[3/4] overflow-hidden rounded-2xl shadow-lg">
+
+          <div className="absolute -bottom-14 -right-4 h-36 w-32 rotate-3 overflow-hidden rounded-2xl border-4 border-cream shadow-xl shadow-ink/15 transition-transform duration-300 hover:rotate-0 sm:-bottom-16 sm:-right-8 sm:h-48 sm:w-40">
             <Image
               src="/images/gallery/liege-branded.jpg"
               alt="Behandlungsliege mit Lashes&more Logo"
               fill
-              sizes="(min-width: 1024px) 25vw, 45vw"
+              sizes="200px"
               className="object-cover"
             />
+          </div>
+
+          <div className="absolute -left-4 -top-5 hidden items-center gap-2 rounded-full bg-ink px-5 py-3 text-cream shadow-lg sm:flex">
+            <IconSparkle className="h-4 w-4 text-gold" />
+            <span className="text-sm font-medium whitespace-nowrap">Lashes&amp;more Academy</span>
           </div>
         </div>
 

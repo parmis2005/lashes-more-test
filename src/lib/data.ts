@@ -136,21 +136,37 @@ export const academyNote =
 export type GalleryImage = {
   src: string;
   alt: string;
+  location: "Studio 1" | "Studio 2";
+  featured?: boolean;
 };
 
 export const galleryImages: GalleryImage[] = [
-  { src: "/images/gallery/lounge-empfang.jpg", alt: "Wartebereich und Empfang im Studio 1, Anhalter Straße" },
-  { src: "/images/gallery/behandlung-gesicht.jpg", alt: "Behandlungsliege für Gesichtsbehandlungen, Studio 1" },
-  { src: "/images/gallery/studio-1-flur.jpg", alt: "Eleganter Flur mit Glastüren, Studio 1 Anhalter Straße 8" },
-  { src: "/images/gallery/pedikuere.jpg", alt: "Pediküre-Bereich, Anhalter Straße 8" },
-  { src: "/images/gallery/doppelbehandlung.jpg", alt: "Behandlungsraum für Doppelbehandlungen, Studio 1" },
-  { src: "/images/gallery/theke.jpg", alt: "Empfangstheke, Studio 1 Anhalter Straße 8" },
-  { src: "/images/gallery/liege-branded.jpg", alt: "Behandlungsliege mit Lashes&more Logo-Handtuch" },
-  { src: "/images/gallery/pigmentierung.jpg", alt: "Pigmentierungsbereich für Permanent Make-up, Studio 1" },
-  { src: "/images/gallery/flur.jpg", alt: "Eingangsbereich vor dem Studio, Anhalter Straße 8" },
-  { src: "/images/gallery/studio-2-empfang.jpg", alt: "Empfangstheke aus Massivholz, Studio 2 Gewerbeschulstraße 95" },
-  { src: "/images/gallery/studio-2-schaufenster.jpg", alt: "Schaufenster mit Leistungsübersicht, Studio 2 Gewerbeschulstraße 95" },
-  { src: "/images/gallery/studio-2-behandlung.jpg", alt: "Behandlungsbereich, Studio 2 Gewerbeschulstraße 95" },
+  {
+    src: "/images/gallery/lounge-empfang.jpg",
+    alt: "Wartebereich und Empfang im Studio 1, Anhalter Straße",
+    location: "Studio 1",
+    featured: true,
+  },
+  { src: "/images/gallery/behandlung-gesicht.jpg", alt: "Behandlungsliege für Gesichtsbehandlungen, Studio 1", location: "Studio 1" },
+  { src: "/images/gallery/studio-1-flur.jpg", alt: "Eleganter Flur mit Glastüren, Studio 1 Anhalter Straße 8", location: "Studio 1" },
+  { src: "/images/gallery/pedikuere.jpg", alt: "Pediküre-Bereich, Anhalter Straße 8", location: "Studio 1" },
+  { src: "/images/gallery/doppelbehandlung.jpg", alt: "Behandlungsraum für Doppelbehandlungen, Studio 1", location: "Studio 1" },
+  { src: "/images/gallery/theke.jpg", alt: "Empfangstheke, Studio 1 Anhalter Straße 8", location: "Studio 1" },
+  {
+    src: "/images/gallery/liege-branded.jpg",
+    alt: "Behandlungsliege mit Lashes&more Logo-Handtuch",
+    location: "Studio 1",
+  },
+  { src: "/images/gallery/pigmentierung.jpg", alt: "Pigmentierungsbereich für Permanent Make-up, Studio 1", location: "Studio 1" },
+  { src: "/images/gallery/flur.jpg", alt: "Eingangsbereich vor dem Studio, Anhalter Straße 8", location: "Studio 1" },
+  { src: "/images/gallery/studio-2-empfang.jpg", alt: "Empfangstheke aus Massivholz, Studio 2 Gewerbeschulstraße 95", location: "Studio 2" },
+  {
+    src: "/images/gallery/studio-2-schaufenster.jpg",
+    alt: "Schaufenster mit Leistungsübersicht, Studio 2 Gewerbeschulstraße 95",
+    location: "Studio 2",
+    featured: true,
+  },
+  { src: "/images/gallery/studio-2-behandlung.jpg", alt: "Behandlungsbereich, Studio 2 Gewerbeschulstraße 95", location: "Studio 2" },
 ];
 
 export const ratingSummary = {
