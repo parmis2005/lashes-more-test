@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { site, ratingSummary, locations, officeHours } from "@/lib/data";
-import { IconClock, IconMapPin, IconStar } from "./icons";
+import { site, ratingSummary, locations, officeHoursSummary } from "@/lib/data";
+import { IconCalendar, IconClock, IconMapPin, IconStar, IconUser } from "./icons";
 
 export default function Hero() {
   return (
@@ -26,20 +26,28 @@ export default function Hero() {
 
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <a
-              href={site.whatsappHref}
+              href={site.bookingUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full bg-ink px-7 py-3.5 text-sm font-medium text-cream shadow-sm transition-colors hover:bg-gold-dark sm:text-base"
+              className="inline-flex items-center gap-2 rounded-full bg-ink px-7 py-3.5 text-sm font-medium text-cream shadow-sm transition-colors hover:bg-gold-dark sm:text-base"
             >
-              Termin per WhatsApp
+              <IconCalendar className="h-4 w-4" />
+              Online buchen
             </a>
             <a
-              href="#leistungen"
-              className="rounded-full border border-ink/20 px-7 py-3.5 text-sm font-medium text-ink transition-colors hover:border-gold-dark hover:text-gold-dark sm:text-base"
+              href={site.accountUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-ink/20 px-7 py-3.5 text-sm font-medium text-ink transition-colors hover:border-gold-dark hover:text-gold-dark sm:text-base"
             >
-              Leistungen ansehen
+              <IconUser className="h-4 w-4" />
+              Mein Konto
             </a>
           </div>
+          <p className="mt-4 text-sm text-ink/55">
+            Oder schreib uns direkt per WhatsApp, wenn du eine Beratung oder eine nicht online
+            buchbare Leistung anfragen möchtest.
+          </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4 text-sm text-ink/70">
             <div className="flex items-center gap-2">
@@ -57,7 +65,7 @@ export default function Hero() {
             </div>
             <div className="flex items-center gap-2">
               <IconClock className="h-4 w-4 text-gold-dark" />
-              <span>{officeHours[0].days}: {officeHours[0].hours}</span>
+              <span>{officeHoursSummary}</span>
             </div>
           </div>
         </div>

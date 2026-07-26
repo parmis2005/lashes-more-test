@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { locations, site } from "@/lib/data";
+import { legalBusiness, locations, site } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Impressum | Lashes&more",
@@ -18,11 +18,15 @@ export default function ImpressumPage() {
         <section>
           <h2 className="font-serif text-lg font-semibold text-ink">Angaben gemäß § 5 TMG</h2>
           <p className="mt-2">
-            {site.name}
+            {legalBusiness.companyName}
             <br />
             {locations[0].street}
             <br />
             {locations[0].postalCity}
+            <br />
+            Unternehmensform: {legalBusiness.legalForm}
+            <br />
+            Gesetzliche Vertretung: {legalBusiness.legalRepresentative}
           </p>
         </section>
 
@@ -31,16 +35,34 @@ export default function ImpressumPage() {
           <p className="mt-2">
             Telefon: {site.phoneDisplay}
             <br />
+            E-Mail: {site.emailDisplay}
+            <br />
             Instagram: {site.instagramHandle}
           </p>
         </section>
 
         <section>
-          <h2 className="font-serif text-lg font-semibold text-ink">Weiterer Standort</h2>
+          <h2 className="font-serif text-lg font-semibold text-ink">Onlinebuchung &amp; Kundenkonto</h2>
           <p className="mt-2">
-            {locations[1].name}
+            Offizielle Buchungsseite:{" "}
+            <a
+              href={site.bookingUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gold-dark hover:underline"
+            >
+              {site.officialWebsiteUrl}
+            </a>
             <br />
-            {locations[1].street}, {locations[1].postalCity}
+            Offizielle Rechtsseite:{" "}
+            <a
+              href={site.officialLegalUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gold-dark hover:underline"
+            >
+              {site.officialLegalUrl}
+            </a>
           </p>
         </section>
 
@@ -53,12 +75,6 @@ export default function ImpressumPage() {
             teilzunehmen.
           </p>
         </section>
-
-        <p className="text-xs text-ink/45">
-          Diese Musterseite wurde auf Basis der öffentlich zugänglichen Salon-Informationen
-          erstellt und ersetzt keine rechtliche Prüfung. Bitte ergänze fehlende Pflichtangaben
-          (z. B. vertretungsberechtigte Person, USt-ID) vor dem Livegang.
-        </p>
       </div>
     </main>
   );

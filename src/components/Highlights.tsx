@@ -1,4 +1,4 @@
-import { IconClock, IconMapPin, IconSparkle, IconStar } from "./icons";
+import { IconCalendar, IconClock, IconMapPin, IconSparkle, IconStar } from "./icons";
 
 const highlights = [
   {
@@ -7,19 +7,24 @@ const highlights = [
     description: "Über 690 echte Kundenbewertungen auf Salonkee.",
   },
   {
+    icon: IconCalendar,
+    title: "Offizielle Onlinebuchung",
+    description: "Direkt über die Live-Buchungsseite inklusive Kundenkonto.",
+  },
+  {
+    icon: IconClock,
+    title: "Öffnungszeiten laut Live-Seite",
+    description: "Montag bis Freitag bis 21 Uhr, Samstag bis 20 Uhr.",
+  },
+  {
     icon: IconMapPin,
     title: "Zwei Studios in Wuppertal",
     description: "Anhalter Straße 8 & Gewerbeschulstraße 95.",
   },
   {
-    icon: IconClock,
-    title: "Flexible Termine",
-    description: "Montag bis Sonntag nach Vereinbarung.",
-  },
-  {
     icon: IconSparkle,
-    title: "Lashes&more Academy",
-    description: "Schulungen für Wimpern, Brows & PMU.",
+    title: "Familiäre Atmosphäre",
+    description: "Professionelle Beauty-Arbeit mit ehrlicher Beratung und Wohlfühlfaktor.",
   },
 ];
 

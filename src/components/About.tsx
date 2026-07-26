@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { academyNote } from "@/lib/data";
+import { academyNote, site } from "@/lib/data";
 import { IconSparkle } from "./icons";
 
 export default function About() {
@@ -39,15 +39,13 @@ export default function About() {
             Dein Studio für Wimpern, Kosmetik &amp; ästhetische Behandlungen
           </h2>
           <p className="mt-5 leading-relaxed text-ink/70">
-            Bei Lashes&amp;more in Wuppertal dreht sich alles um deine natürliche Schönheit. In
-            unseren beiden Studios auf der Anhalter Straße und der Gewerbeschulstraße bieten wir
-            dir professionelle Wimpernverlängerungen, Lashlifting, Microblading, Permanent
-            Make-up und Kosmetikbehandlungen – in ruhiger, hochwertiger Atmosphäre.
+            {site.officialDescription} Bei Lashes&amp;more erwartet dich professionelle Beauty-
+            Arbeit in herzlicher, ehrlicher und entspannter Atmosphäre.
           </p>
           <p className="mt-4 leading-relaxed text-ink/70">
-            Für medizinische Ästhetik steht dir unsere Heilpraktikerin für Ästhetik &amp;
-            Naturheilkunde, Sarah Solimando-Torka, mit Behandlungen wie Hyaluronsäure-
-            Unterspritzung, Lipolyse und Mesotherapie zur Seite.
+            In unseren Studios auf der Anhalter Straße und der Gewerbeschulstraße bieten wir dir
+            Wimpernverlängerung, Lashlifting, Browlifting, Microblading, Permanent Make-up,
+            Gesichtsbehandlungen, Laser-Treatments und weitere ästhetische Services.
           </p>
           <p className="mt-4 leading-relaxed text-ink/70">{academyNote}</p>
 

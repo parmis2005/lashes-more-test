@@ -10,9 +10,8 @@ export default function Services() {
             Unsere Behandlungen
           </h2>
           <p className="mt-4 leading-relaxed text-cream/60">
-            Von Wimpernverlängerung bis medizinische Ästhetik – hier findest du unser komplettes
-            Leistungsspektrum. Genaue Preise für Wimpern &amp; Kosmetik besprechen wir gerne
-            persönlich bei deiner Beratung.
+            Ein kompakter Überblick über die wichtigsten Behandlungen. Die komplette Preis- und
+            Leistungsliste findest du zusätzlich in der offiziellen Onlinebuchung weiter oben.
           </p>
         </div>
 
@@ -30,7 +29,12 @@ export default function Services() {
                     key={item.name}
                     className="flex items-baseline justify-between gap-4 border-b border-cream/10 pb-3 text-sm last:border-none"
                   >
-                    <span className="text-cream/85">{item.name}</span>
+                    <div>
+                      <span className="text-cream/85">{item.name}</span>
+                      {item.duration ? (
+                        <p className="mt-1 text-xs text-cream/45">{item.duration}</p>
+                      ) : null}
+                    </div>
                     <span className="whitespace-nowrap font-medium text-cream">{item.price}</span>
                   </li>
                 ))}
@@ -41,17 +45,27 @@ export default function Services() {
 
         <div className="mt-12 flex flex-col items-center gap-4 text-center">
           <p className="text-cream/60">
-            Buchbar für unsere Heilpraktikerin direkt online – alle weiteren Termine gerne per
-            WhatsApp oder Instagram.
+            Viele Leistungen sind direkt online buchbar. Für individuelle Rückfragen oder nicht
+            online buchbare Services erreichst du uns zusätzlich per WhatsApp.
           </p>
-          <a
-            href={site.whatsappHref}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-full bg-gold px-7 py-3.5 text-sm font-medium text-ink transition-colors hover:bg-gold-light"
-          >
-            Jetzt Termin anfragen
-          </a>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <a
+              href={site.bookingUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full bg-gold px-7 py-3.5 text-sm font-medium text-ink transition-colors hover:bg-gold-light"
+            >
+              Komplette Onlinebuchung öffnen
+            </a>
+            <a
+              href={site.whatsappHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full border border-cream/20 px-7 py-3.5 text-sm font-medium text-cream transition-colors hover:bg-cream/10"
+            >
+              Per WhatsApp anfragen
+            </a>
+          </div>
         </div>
       </div>
     </section>

@@ -8,25 +8,25 @@ export default function CtaBanner() {
           Bereit für deinen nächsten Termin?
         </h2>
         <p className="max-w-xl text-ink/80">
-          Schreib uns einfach auf WhatsApp oder Instagram – wir melden uns schnellstmöglich mit
-          einem passenden Termin für dich zurück.
+          Buche direkt online über die offizielle Buchungsseite oder nutze WhatsApp für Leistungen,
+          die individuell abgestimmt werden sollen.
         </p>
         <div className="flex flex-wrap items-center justify-center gap-4">
           <a
-            href={site.whatsappHref}
+            href={site.bookingUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-full bg-ink px-7 py-3.5 text-sm font-medium text-cream transition-transform hover:scale-[1.03] sm:text-base"
           >
-            Per WhatsApp anfragen
+            Jetzt online buchen
           </a>
           <a
-            href={site.instagramUrl}
+            href={site.whatsappHref}
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-full border border-ink/30 px-7 py-3.5 text-sm font-medium text-ink transition-colors hover:bg-ink/10 sm:text-base"
           >
-            Auf Instagram folgen
+            Per WhatsApp anfragen
           </a>
         </div>
       </div>

@@ -1,5 +1,15 @@
 import { locations, officeHours, officeHoursNote, site } from "@/lib/data";
-import { IconClock, IconInstagram, IconMapPin, IconPhone, IconWhatsApp } from "./icons";
+import {
+  IconCalendar,
+  IconClock,
+  IconInstagram,
+  IconMail,
+  IconMapPin,
+  IconPhone,
+  IconTikTok,
+  IconUser,
+  IconWhatsApp,
+} from "./icons";
 
 export default function LocationsContact() {
   return (
@@ -70,6 +80,9 @@ export default function LocationsContact() {
           </h3>
           <div className="mt-4 flex flex-col gap-3 text-sm text-cream/75">
             <a href={site.phoneHref} className="hover:text-cream">{site.phoneDisplay}</a>
+            <a href={site.emailHref} className="inline-flex items-center gap-2 hover:text-cream">
+              <IconMail className="h-4 w-4" /> {site.emailDisplay}
+            </a>
             <a
               href={site.whatsappHref}
               target="_blank"
@@ -86,6 +99,14 @@ export default function LocationsContact() {
             >
               <IconInstagram className="h-4 w-4" /> {site.instagramHandle}
             </a>
+            <a
+              href={site.tiktokUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 hover:text-cream"
+            >
+              <IconTikTok className="h-4 w-4" /> TikTok
+            </a>
           </div>
         </div>
 
@@ -93,18 +114,30 @@ export default function LocationsContact() {
           <div>
             <h3 className="font-serif text-lg font-semibold text-gold">Termin buchen</h3>
             <p className="mt-4 text-sm leading-relaxed text-cream/70">
-              Alle Termine – außer bei unserer Heilpraktikerin – buchst du bequem per WhatsApp
-              oder über den Link in unserer Instagram-Bio.
+              Die offizielle Live-Seite bietet direkte Onlinebuchung, dein Kundenkonto und die
+              vollständige Übersicht aller Leistungen.
             </p>
           </div>
-          <a
-            href={site.whatsappHref}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center rounded-full bg-gold px-6 py-3 text-sm font-medium text-ink transition-colors hover:bg-gold-light"
-          >
-            Jetzt Termin anfragen
-          </a>
+          <div className="flex flex-col gap-3">
+            <a
+              href={site.bookingUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-gold px-6 py-3 text-sm font-medium text-ink transition-colors hover:bg-gold-light"
+            >
+              <IconCalendar className="h-4 w-4" />
+              Online buchen
+            </a>
+            <a
+              href={site.accountUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-cream/15 px-6 py-3 text-sm font-medium text-cream transition-colors hover:border-gold hover:text-gold"
+            >
+              <IconUser className="h-4 w-4" />
+              Mein Konto öffnen
+            </a>
+          </div>
         </div>
       </div>
     </section>

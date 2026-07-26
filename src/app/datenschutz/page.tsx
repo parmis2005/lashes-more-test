@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { locations, site } from "@/lib/data";
+import { legalBusiness, locations, site } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Datenschutz | Lashes&more",
@@ -22,9 +22,13 @@ export default function DatenschutzPage() {
           <p className="mt-2">
             Verantwortlich für die Datenverarbeitung auf dieser Website ist:
             <br />
-            {site.name}, {locations[0].street}, {locations[0].postalCity}
+            {legalBusiness.companyName}, {locations[0].street}, {locations[0].postalCity}
+            <br />
+            Vertreten durch: {legalBusiness.legalRepresentative}
             <br />
             Telefon: {site.phoneDisplay}
+            <br />
+            E-Mail: {site.emailDisplay}
           </p>
         </section>
 
@@ -38,27 +42,40 @@ export default function DatenschutzPage() {
         </section>
 
         <section>
-          <h2 className="font-serif text-lg font-semibold text-ink">3. Eingebundene Karten</h2>
+          <h2 className="font-serif text-lg font-semibold text-ink">3. Onlinebuchung über Planity</h2>
           <p className="mt-2">
-            Zur Anzeige unserer Standorte binden wir Google Maps ein. Beim Aufruf der jeweiligen
-            Sektion können Daten (z. B. IP-Adresse) an Google LLC übertragen werden. Weitere
-            Informationen findest du in der Datenschutzerklärung von Google.
+            Für Terminbuchung und Kundenkonto verlinken wir auf die offizielle Lashes&amp;more-
+            Buchungsseite sowie auf Dienste von Planity. Beim Aufruf dieser externen Seiten gelten
+            die Datenschutz- und Nutzungsbedingungen des jeweiligen Anbieters. Weitere Informationen
+            findest du unter{" "}
+            <a
+              href={site.planityLegalUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gold-dark hover:underline"
+            >
+              {site.planityLegalUrl}
+            </a>
+            .
           </p>
         </section>
 
         <section>
-          <h2 className="font-serif text-lg font-semibold text-ink">4. Deine Rechte</h2>
+          <h2 className="font-serif text-lg font-semibold text-ink">4. Eingebundene Karten</h2>
+          <p className="mt-2">
+            Zur Anzeige unserer Standorte binden wir Google Maps ein. Beim Aufruf der jeweiligen
+            Sektion können Daten wie deine IP-Adresse an Google übermittelt werden.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-serif text-lg font-semibold text-ink">5. Deine Rechte</h2>
           <p className="mt-2">
             Du hast jederzeit das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung
             der Verarbeitung deiner personenbezogenen Daten sowie ein Beschwerderecht bei der
             zuständigen Aufsichtsbehörde.
           </p>
         </section>
-
-        <p className="text-xs text-ink/45">
-          Diese Musterseite dient als Ausgangspunkt und ersetzt keine individuelle Rechtsberatung.
-          Bitte vor dem Livegang durch eine fachkundige Stelle prüfen lassen.
-        </p>
       </div>
     </main>
   );

@@ -3,11 +3,14 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { site, navLinks } from "@/lib/data";
-import { IconClose, IconGift, IconMenu, IconPhone } from "./icons";
+import { IconCalendar, IconClose, IconMenu, IconPhone, IconUser } from "./icons";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const desktopNavLinks = navLinks.filter(
+    (link) => link.href !== "#online-buchung" && link.href !== "#team",
+  );
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -30,47 +33,48 @@ export default function Header() {
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8 lg:px-10">
-        <Link href="#home" className="font-script text-3xl leading-none text-ink sm:text-4xl">
+        <Link href="#home" className="shrink-0 font-script text-3xl leading-none text-ink sm:text-4xl">
           Lashes<span className="text-gold">&</span>more
         </Link>
 
-        <nav className="hidden items-center gap-6 xl:flex">
-          {navLinks.map((link) => (
+        <nav className="hidden items-center gap-5 xl:flex 2xl:gap-6">
+          {desktopNavLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium tracking-wide text-ink/80 transition-colors hover:text-gold-dark"
+              className="shrink-0 whitespace-nowrap text-sm font-medium tracking-wide text-ink/80 transition-colors hover:text-gold-dark"
             >
               {link.label}
             </Link>
           ))}
         </nav>
 
-        <div className="hidden items-center gap-3 xl:flex">
+        <div className="hidden items-center gap-2 xl:flex 2xl:gap-3">
           <a
             href={site.phoneHref}
             title={site.phoneDisplay}
             aria-label={`Anrufen: ${site.phoneDisplay}`}
-            className="flex h-10 w-10 items-center justify-center rounded-full text-ink/70 hover:bg-ink/5 hover:text-gold-dark"
+            className="hidden h-10 w-10 items-center justify-center rounded-full text-ink/70 hover:bg-ink/5 hover:text-gold-dark 2xl:flex"
           >
             <IconPhone className="h-4 w-4" />
           </a>
           <a
-            href={site.giftCardUrl}
+            href={site.accountUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 rounded-full bg-ink/5 px-4 py-2.5 text-sm font-medium text-ink/80 transition-colors hover:bg-ink/10 hover:text-ink"
+            className="hidden shrink-0 items-center gap-2 rounded-full bg-ink/5 px-4 py-2.5 text-sm font-medium whitespace-nowrap text-ink/80 transition-colors hover:bg-ink/10 hover:text-ink 2xl:flex"
           >
-            <IconGift className="h-4 w-4" />
-            Geschenkgutschein
+            <IconUser className="h-4 w-4" />
+            Mein Konto
           </a>
           <a
-            href={site.whatsappHref}
+            href={site.bookingUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full bg-ink px-5 py-2.5 text-sm font-medium text-cream transition-colors hover:bg-gold-dark"
+            className="inline-flex shrink-0 items-center gap-2 rounded-full bg-ink px-5 py-2.5 text-sm font-medium whitespace-nowrap text-cream transition-colors hover:bg-gold-dark"
           >
-            Termin anfragen
+            <IconCalendar className="h-4 w-4" />
+            Termin buchen
           </a>
         </div>
 
@@ -104,21 +108,30 @@ export default function Header() {
               {site.phoneDisplay}
             </a>
             <a
-              href={site.giftCardUrl}
+              href={site.accountUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 rounded-full bg-ink/5 px-5 py-3 text-sm font-medium text-ink/80"
             >
-              <IconGift className="h-4 w-4" />
-              Geschenkgutschein
+              <IconUser className="h-4 w-4" />
+              Mein Konto
+            </a>
+            <a
+              href={site.bookingUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-ink px-5 py-3.5 text-sm font-medium text-cream"
+            >
+              <IconCalendar className="h-4 w-4" />
+              Online Terminbuchung
             </a>
             <a
               href={site.whatsappHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full bg-ink px-5 py-3.5 text-center text-sm font-medium text-cream"
+              className="rounded-full border border-ink/15 px-5 py-3.5 text-center text-sm font-medium text-ink"
             >
-              Termin per WhatsApp anfragen
+              WhatsApp Anfrage
             </a>
           </div>
         </div>

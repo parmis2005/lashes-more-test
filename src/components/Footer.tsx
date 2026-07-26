@@ -1,6 +1,13 @@
 import Link from "next/link";
 import { locations, navLinks, officeHours, site } from "@/lib/data";
-import { IconFacebook, IconInstagram, IconWhatsApp } from "./icons";
+import {
+  IconCalendar,
+  IconFacebook,
+  IconInstagram,
+  IconTikTok,
+  IconUser,
+  IconWhatsApp,
+} from "./icons";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -43,6 +50,15 @@ export default function Footer() {
               >
                 <IconWhatsApp className="h-5 w-5" />
               </a>
+              <a
+                href={site.tiktokUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="TikTok"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-cream/20 text-cream hover:border-gold hover:text-gold"
+              >
+                <IconTikTok className="h-5 w-5" />
+              </a>
             </div>
           </div>
 
@@ -71,7 +87,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <p className="font-serif text-sm font-semibold uppercase tracking-wider text-gold">Navigation</p>
+            <p className="font-serif text-sm font-semibold uppercase tracking-wider text-gold">Schnellzugriff</p>
             <ul className="mt-4 space-y-2 text-sm text-cream/65">
               {navLinks.map((link) => (
                 <li key={link.href}>
@@ -80,6 +96,28 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <a
+                  href={site.bookingUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 hover:text-cream"
+                >
+                  <IconCalendar className="h-4 w-4" />
+                  Online buchen
+                </a>
+              </li>
+              <li>
+                <a
+                  href={site.accountUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 hover:text-cream"
+                >
+                  <IconUser className="h-4 w-4" />
+                  Mein Konto
+                </a>
+              </li>
             </ul>
           </div>
         </div>
