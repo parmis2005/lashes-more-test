@@ -1,0 +1,86 @@
+import Image from "next/image";
+import { site, ratingSummary, locations, officeHours } from "@/lib/data";
+import { IconClock, IconMapPin, IconStar } from "./icons";
+
+export default function Hero() {
+  return (
+    <section id="home" className="relative overflow-hidden pt-32 pb-20 sm:pt-40 sm:pb-28">
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-cream-soft via-cream to-cream" />
+      <div className="pointer-events-none absolute -right-24 top-24 -z-10 h-72 w-72 rounded-full bg-gold/15 blur-3xl sm:h-96 sm:w-96" />
+
+      <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 sm:px-8 lg:grid-cols-2 lg:gap-10 lg:px-10">
+        <div>
+          <p className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/10 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-gold-dark">
+            Wimpern · Kosmetik · Ästhetik in Wuppertal
+          </p>
+
+          <h1 className="mt-6 text-4xl leading-[1.1] text-ink sm:text-5xl lg:text-6xl">
+            <span className="font-serif font-semibold">Lashes</span>
+            <span className="font-script text-gold">&amp;more</span>
+          </h1>
+          <p className="mt-4 font-script text-3xl text-gold-dark sm:text-4xl">{site.slogan}</p>
+
+          <p className="mt-6 max-w-xl text-base leading-relaxed text-ink/70 sm:text-lg">
+            {site.description}
+          </p>
+
+          <div className="mt-8 flex flex-wrap items-center gap-4">
+            <a
+              href={site.whatsappHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full bg-ink px-7 py-3.5 text-sm font-medium text-cream shadow-sm transition-colors hover:bg-gold-dark sm:text-base"
+            >
+              Termin per WhatsApp
+            </a>
+            <a
+              href="#leistungen"
+              className="rounded-full border border-ink/20 px-7 py-3.5 text-sm font-medium text-ink transition-colors hover:border-gold-dark hover:text-gold-dark sm:text-base"
+            >
+              Leistungen ansehen
+            </a>
+          </div>
+
+          <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4 text-sm text-ink/70">
+            <div className="flex items-center gap-2">
+              <div className="flex text-gold">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <IconStar key={i} className="h-4 w-4" />
+                ))}
+              </div>
+              <span className="font-medium text-ink">{ratingSummary.average}</span>
+              <span>({ratingSummary.count} Bewertungen)</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <IconMapPin className="h-4 w-4 text-gold-dark" />
+              <span>{locations[0].street}, Wuppertal</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <IconClock className="h-4 w-4 text-gold-dark" />
+              <span>{officeHours[0].days}: {officeHours[0].hours}</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="relative">
+          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[2rem] shadow-2xl shadow-ink/10 sm:aspect-[5/6]">
+            <Image
+              src="/images/hero.jpg"
+              alt="Empfangsbereich von Lashes&more in Wuppertal"
+              fill
+              priority
+              sizes="(min-width: 1024px) 40vw, 90vw"
+              className="object-cover"
+            />
+          </div>
+          <div className="absolute -bottom-6 -left-6 hidden rounded-2xl bg-ink px-6 py-5 text-cream shadow-xl sm:block">
+            <p className="font-serif text-3xl font-semibold text-gold">{ratingSummary.average}</p>
+            <p className="text-xs uppercase tracking-widest text-cream/70">
+              {ratingSummary.verifiedCount}+ verifizierte Bewertungen
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

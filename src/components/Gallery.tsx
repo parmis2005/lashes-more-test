@@ -1,0 +1,129 @@
+"use client";
+
+import { useCallback, useEffect, useState } from "react";
+import Image from "next/image";
+import { galleryImages } from "@/lib/data";
+import { IconChevronLeft, IconChevronRight, IconClose } from "./icons";
+
+export default function Gallery() {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+  const close = useCallback(() => setActiveIndex(null), []);
+  const prev = useCallback(
+    () => setActiveIndex((i) => (i === null ? null : (i - 1 + galleryImages.length) % galleryImages.length)),
+    []
+  );
+  const next = useCallback(
+    () => setActiveIndex((i) => (i === null ? null : (i + 1) % galleryImages.length)),
+    []
+  );
+
+  useEffect(() => {
+    if (activeIndex === null) return;
+    document.body.style.overflow = "hidden";
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") close();
+      if (e.key === "ArrowLeft") prev();
+      if (e.key === "ArrowRight") next();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [activeIndex, close, prev, next]);
+
+  return (
+    <section id="galerie" className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28 lg:px-10">
+      <div className="mx-auto max-w-2xl text-center">
+        <p className="text-xs font-medium uppercase tracking-[0.25em] text-gold-dark">Galerie</p>
+        <h2 className="mt-3 font-serif text-3xl font-semibold text-ink sm:text-4xl">
+          Ein Blick in unsere Studios
+        </h2>
+        <p className="mt-4 leading-relaxed text-ink/70">
+          Echte Einblicke in unsere beiden Standorte in Wuppertal.
+        </p>
+      </div>
+
+      <div className="mt-14 columns-2 gap-4 sm:columns-3 lg:columns-4">
+        {galleryImages.map((image, index) => (
+          <button
+            key={image.src}
+            type="button"
+            onClick={() => setActiveIndex(index)}
+            className="group relative mb-4 block w-full overflow-hidden rounded-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+          >
+            <Image
+              src={image.src}
+              alt={image.alt}
+              width={480}
+              height={600}
+              sizes="(min-width: 1024px) 22vw, (min-width: 640px) 30vw, 46vw"
+              className="w-full object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+            <span className="absolute inset-0 bg-ink/0 transition-colors duration-300 group-hover:bg-ink/10" />
+          </button>
+        ))}
+      </div>
+
+      {activeIndex !== null && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-ink/95 px-4 py-10"
+          role="dialog"
+          aria-modal="true"
+          onClick={close}
+        >
+          <button
+            type="button"
+            aria-label="Schließen"
+            className="absolute right-5 top-5 flex h-11 w-11 items-center justify-center rounded-full border border-cream/30 text-cream hover:bg-cream/10"
+            onClick={close}
+          >
+            <IconClose className="h-5 w-5" />
+          </button>
+
+          <button
+            type="button"
+            aria-label="Vorheriges Bild"
+            className="absolute left-3 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-cream/30 text-cream hover:bg-cream/10 sm:left-6"
+            onClick={(e) => {
+              e.stopPropagation();
+              prev();
+            }}
+          >
+            <IconChevronLeft className="h-5 w-5" />
+          </button>
+
+          <div
+            className="relative aspect-[4/5] w-full max-w-md sm:aspect-[3/4] sm:max-w-lg"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <Image
+              src={galleryImages[activeIndex].src}
+              alt={galleryImages[activeIndex].alt}
+              fill
+              sizes="90vw"
+              className="rounded-xl object-contain"
+            />
+          </div>
+
+          <button
+            type="button"
+            aria-label="Nächstes Bild"
+            className="absolute right-3 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-cream/30 text-cream hover:bg-cream/10 sm:right-6"
+            onClick={(e) => {
+              e.stopPropagation();
+              next();
+            }}
+          >
+            <IconChevronRight className="h-5 w-5" />
+          </button>
+
+          <p className="absolute bottom-6 left-1/2 max-w-xl -translate-x-1/2 px-6 text-center text-sm text-cream/70">
+            {galleryImages[activeIndex].alt}
+          </p>
+        </div>
+      )}
+    </section>
+  );
+}

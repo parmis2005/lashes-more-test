@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-ink: #201c1a;
+  --color-charcoal: #2c2724;
+  --color-cream: #faf6f0;
+  --color-cream-soft: #f2ece2;
+  --color-sand: #ece2d1;
+  --color-gold: #b6905a;
+  --color-gold-light: #d8bd8f;
+  --color-gold-dark: #8a6a3d;
+  --font-sans: var(--font-body);
+  --font-serif: var(--font-heading);
+  --font-script: var(--font-dancing-script);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section[id] {
+  scroll-margin-top: 88px;
+}
+
+::selection {
+  background: var(--color-gold);
+  color: var(--color-ink);
+}
