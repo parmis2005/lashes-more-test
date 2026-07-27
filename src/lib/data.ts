@@ -388,7 +388,7 @@ export const bookingCategories: BookingCategory[] = [
 export const bookingNotice = {
   title: "Online Terminbuchung",
   description:
-    "Die Live-Seite führt die vollständige Buchung über die offizielle Lashes&more-Buchungsseite. Dort findest du Verfügbarkeiten, weitere Leistungen und dein Kundenkonto.",
+    "Wähle in der Demo zuerst dein Angebot und anschließend einen freien Termin direkt auf dieser Seite.",
   finePrint:
     "Nicht online buchbare Leistungen sind in der Übersicht markiert und werden laut offizieller Seite individuell per WhatsApp abgestimmt.",
 } as const;

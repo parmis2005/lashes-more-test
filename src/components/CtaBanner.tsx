@@ -9,8 +9,8 @@ export default function CtaBanner() {
           Bereit für deinen nächsten Termin?
         </h2>
         <p className="max-w-xl text-ink/80">
-          Buche direkt online über die offizielle Buchungsseite oder nutze WhatsApp für Leistungen,
-          die individuell abgestimmt werden sollen.
+          Wähle dein Angebot und einen freien Termin direkt in der Demo oder nutze WhatsApp für
+          Leistungen, die individuell abgestimmt werden sollen.
         </p>
         <div className="flex flex-wrap items-center justify-center gap-4">
           <BookingTrigger

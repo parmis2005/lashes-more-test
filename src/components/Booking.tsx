@@ -2,6 +2,19 @@ import { bookingCategories, bookingNotice, site } from "@/lib/data";
 import { IconCalendar, IconUser } from "./icons";
 import BookingTrigger from "./BookingTrigger";
 
+function bookingCategoryInitials(title: string) {
+  return title
+    .split(/[^A-Za-zÄÖÜäöüß0-9]+/u)
+    .filter(Boolean)
+    .map((word) => word[0]?.toLocaleLowerCase("de"))
+    .join("");
+}
+
+const sortedBookingCategories = [...bookingCategories].sort((a, b) =>
+  bookingCategoryInitials(a.title).localeCompare(bookingCategoryInitials(b.title), "de") ||
+  a.title.localeCompare(b.title, "de"),
+);
+
 export default function Booking() {
   return (
     <section id="online-buchung" className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28 lg:px-10">
@@ -34,7 +47,7 @@ export default function Booking() {
       </div>
 
       <div className="mt-14 grid gap-5 lg:grid-cols-2">
-        {bookingCategories.map((category) => (
+        {sortedBookingCategories.map((category) => (
           <details
             key={category.id}
             className="rounded-2xl border border-ink/10 bg-cream-soft/55 p-6 shadow-sm open:border-gold/35 open:bg-cream-soft"
@@ -46,7 +59,7 @@ export default function Booking() {
                   <p className="mt-2 text-sm leading-relaxed text-ink/65">{category.description}</p>
                 ) : null}
               </div>
-              <span className="shrink-0 rounded-full bg-ink px-3 py-1 text-xs font-medium uppercase tracking-[0.2em] text-cream">
+              <span className="inline-flex h-6.5 w-31 shrink-0 items-center justify-center rounded-full bg-ink px-2 text-center text-[10px] font-medium uppercase tracking-[0.16em] text-cream">
                 {category.moreCount ? `+ ${category.moreCount} weitere` : "Details"}
               </span>
             </summary>

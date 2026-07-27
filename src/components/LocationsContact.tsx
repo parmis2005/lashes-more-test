@@ -115,8 +115,8 @@ export default function LocationsContact() {
           <div>
             <h3 className="font-serif text-lg font-semibold text-gold">Termin buchen</h3>
             <p className="mt-4 text-sm leading-relaxed text-cream/70">
-              Die offizielle Live-Seite bietet direkte Onlinebuchung, dein Kundenkonto und die
-              vollständige Übersicht aller Leistungen.
+              Öffne die Demo-Terminbuchung, wähle eine Behandlung aus und suche dir danach eine
+              freie Uhrzeit aus.
             </p>
           </div>
           <div className="flex flex-col gap-3">
