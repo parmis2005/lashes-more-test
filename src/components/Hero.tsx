@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { site, ratingSummary, locations, officeHoursSummary } from "@/lib/data";
 import { IconCalendar, IconClock, IconMapPin, IconStar, IconUser } from "./icons";
+import BookingTrigger from "./BookingTrigger";
 
 export default function Hero() {
   return (
@@ -25,15 +26,12 @@ export default function Hero() {
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-4">
-            <a
-              href={site.bookingUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+            <BookingTrigger
               className="inline-flex items-center gap-2 rounded-full bg-ink px-7 py-3.5 text-sm font-medium text-cream shadow-sm transition-colors hover:bg-gold-dark sm:text-base"
             >
               <IconCalendar className="h-4 w-4" />
               Online buchen
-            </a>
+            </BookingTrigger>
             <a
               href={site.accountUrl}
               target="_blank"

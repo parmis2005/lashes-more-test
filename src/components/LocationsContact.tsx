@@ -10,6 +10,7 @@ import {
   IconUser,
   IconWhatsApp,
 } from "./icons";
+import BookingTrigger from "./BookingTrigger";
 
 export default function LocationsContact() {
   return (
@@ -119,15 +120,12 @@ export default function LocationsContact() {
             </p>
           </div>
           <div className="flex flex-col gap-3">
-            <a
-              href={site.bookingUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+            <BookingTrigger
               className="inline-flex items-center justify-center gap-2 rounded-full bg-gold px-6 py-3 text-sm font-medium text-ink transition-colors hover:bg-gold-light"
             >
               <IconCalendar className="h-4 w-4" />
               Online buchen
-            </a>
+            </BookingTrigger>
             <a
               href={site.accountUrl}
               target="_blank"

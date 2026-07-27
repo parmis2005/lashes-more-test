@@ -1,4 +1,5 @@
 import { site, teamMembers, teamValues } from "@/lib/data";
+import BookingTrigger from "./BookingTrigger";
 
 export default function Team() {
   return (
@@ -36,7 +37,16 @@ export default function Team() {
             </p>
             {teamMembers.map((member) => (
               <div key={member.name} className="mt-5 rounded-2xl border border-cream/10 bg-cream/[0.04] p-6">
-                <h3 className="font-serif text-3xl font-semibold text-gold">{member.name}</h3>
+                <h3 className="font-serif text-3xl font-semibold text-gold">
+                  <a
+                    href={member.profileUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="transition-colors hover:text-gold-light"
+                  >
+                    {member.name}
+                  </a>
+                </h3>
                 <p className="mt-1 text-sm uppercase tracking-[0.22em] text-cream/55">{member.role}</p>
                 <p className="mt-4 text-sm leading-relaxed text-cream/75">{member.description}</p>
                 <ul className="mt-5 flex flex-wrap gap-2">
@@ -53,14 +63,11 @@ export default function Team() {
             ))}
 
             <div className="mt-6 flex flex-col gap-3">
-              <a
-                href={site.bookingUrl}
-                target="_blank"
-                rel="noopener noreferrer"
+              <BookingTrigger
                 className="inline-flex items-center justify-center rounded-full bg-gold px-6 py-3 text-sm font-medium text-ink transition-colors hover:bg-gold-light"
               >
                 Online Terminbuchung öffnen
-              </a>
+              </BookingTrigger>
               <a
                 href={site.accountUrl}
                 target="_blank"

@@ -4,13 +4,11 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { site, navLinks } from "@/lib/data";
 import { IconCalendar, IconClose, IconMenu, IconPhone, IconUser } from "./icons";
+import { openBookingModal } from "./booking-modal-events";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const desktopNavLinks = navLinks.filter(
-    (link) => link.href !== "#online-buchung" && link.href !== "#team",
-  );
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -32,32 +30,24 @@ export default function Header() {
         scrolled ? "bg-cream/95 shadow-[0_1px_0_0_rgba(32,28,26,0.08)] backdrop-blur-sm" : "bg-transparent"
       }`}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8 lg:px-10">
-        <Link href="#home" className="shrink-0 font-script text-3xl leading-none text-ink sm:text-4xl">
+      <div className="mx-auto flex max-w-[104rem] items-center gap-6 px-5 py-4 sm:px-8 lg:px-10">
+        <Link href="#home" className="shrink-0 font-script text-[2rem] leading-none text-ink 2xl:text-[2.2rem]">
           Lashes<span className="text-gold">&</span>more
         </Link>
 
-        <nav className="hidden items-center gap-5 xl:flex 2xl:gap-6">
-          {desktopNavLinks.map((link) => (
+        <nav className="hidden min-w-0 flex-1 items-center justify-center gap-4 xl:flex 2xl:gap-5">
+          {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="shrink-0 whitespace-nowrap text-sm font-medium tracking-wide text-ink/80 transition-colors hover:text-gold-dark"
+              className="shrink-0 whitespace-nowrap text-[0.95rem] font-medium tracking-wide text-ink/80 transition-colors hover:text-gold-dark 2xl:text-[1rem]"
             >
               {link.label}
             </Link>
           ))}
         </nav>
 
-        <div className="hidden items-center gap-2 xl:flex 2xl:gap-3">
-          <a
-            href={site.phoneHref}
-            title={site.phoneDisplay}
-            aria-label={`Anrufen: ${site.phoneDisplay}`}
-            className="hidden h-10 w-10 items-center justify-center rounded-full text-ink/70 hover:bg-ink/5 hover:text-gold-dark 2xl:flex"
-          >
-            <IconPhone className="h-4 w-4" />
-          </a>
+        <div className="hidden shrink-0 items-center gap-2 xl:flex 2xl:gap-3">
           <a
             href={site.accountUrl}
             target="_blank"
@@ -68,10 +58,12 @@ export default function Header() {
             Mein Konto
           </a>
           <a
-            href={site.bookingUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex shrink-0 items-center gap-2 rounded-full bg-ink px-5 py-2.5 text-sm font-medium whitespace-nowrap text-cream transition-colors hover:bg-gold-dark"
+            className="inline-flex shrink-0 items-center gap-2 rounded-full bg-ink px-4 py-2.5 text-sm font-medium whitespace-nowrap text-cream transition-colors hover:bg-gold-dark 2xl:px-5"
+            href="#online-buchung"
+            onClick={(event) => {
+              event.preventDefault();
+              openBookingModal();
+            }}
           >
             <IconCalendar className="h-4 w-4" />
             Termin buchen
@@ -116,15 +108,17 @@ export default function Header() {
               <IconUser className="h-4 w-4" />
               Mein Konto
             </a>
-            <a
-              href={site.bookingUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              type="button"
               className="inline-flex items-center justify-center gap-2 rounded-full bg-ink px-5 py-3.5 text-sm font-medium text-cream"
+              onClick={() => {
+                setOpen(false);
+                openBookingModal();
+              }}
             >
               <IconCalendar className="h-4 w-4" />
               Online Terminbuchung
-            </a>
+            </button>
             <a
               href={site.whatsappHref}
               target="_blank"

@@ -8,6 +8,7 @@ import {
   IconUser,
   IconWhatsApp,
 } from "./icons";
+import BookingTrigger from "./BookingTrigger";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -97,15 +98,10 @@ export default function Footer() {
                 </li>
               ))}
               <li>
-                <a
-                  href={site.bookingUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 hover:text-cream"
-                >
+                <BookingTrigger className="inline-flex items-center gap-2 hover:text-cream">
                   <IconCalendar className="h-4 w-4" />
                   Online buchen
-                </a>
+                </BookingTrigger>
               </li>
               <li>
                 <a

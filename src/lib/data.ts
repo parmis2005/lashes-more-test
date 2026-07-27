@@ -395,11 +395,12 @@ export const bookingNotice = {
 
 export const teamMembers = [
   {
-    name: "Sara",
-    role: "Beauty-Expertin",
+    name: "Monique Kumpmann",
+    role: "Ansprechpartnerin",
+    profileUrl: "https://www.facebook.com/monique.crocikumpmann/",
     description:
-      "Auf der offiziellen Buchungsseite wird Sara als direkte Ansprechpartnerin im Team geführt.",
-    specialties: ["Wimpern", "Brows", "Kosmetik", "Beratung"],
+      "Für Fragen zu Behandlungen, Terminbuchung und persönlicher Beratung ist Monique Kumpmann deine Ansprechpartnerin bei Lashes&more.",
+    specialties: ["Beratung", "Terminbuchung", "Kontakt"],
   },
 ] as const;
 

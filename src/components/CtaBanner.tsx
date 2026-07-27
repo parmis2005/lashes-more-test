@@ -1,4 +1,5 @@
 import { site } from "@/lib/data";
+import BookingTrigger from "./BookingTrigger";
 
 export default function CtaBanner() {
   return (
@@ -12,14 +13,11 @@ export default function CtaBanner() {
           die individuell abgestimmt werden sollen.
         </p>
         <div className="flex flex-wrap items-center justify-center gap-4">
-          <a
-            href={site.bookingUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+          <BookingTrigger
             className="rounded-full bg-ink px-7 py-3.5 text-sm font-medium text-cream transition-transform hover:scale-[1.03] sm:text-base"
           >
             Jetzt online buchen
-          </a>
+          </BookingTrigger>
           <a
             href={site.whatsappHref}
             target="_blank"

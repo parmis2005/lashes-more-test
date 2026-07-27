@@ -1,5 +1,6 @@
 import { bookingCategories, bookingNotice, site } from "@/lib/data";
 import { IconCalendar, IconUser } from "./icons";
+import BookingTrigger from "./BookingTrigger";
 
 export default function Booking() {
   return (
@@ -15,15 +16,12 @@ export default function Booking() {
       </div>
 
       <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-        <a
-          href={site.bookingUrl}
-          target="_blank"
-          rel="noopener noreferrer"
+        <BookingTrigger
           className="inline-flex items-center gap-2 rounded-full bg-ink px-7 py-3.5 text-sm font-medium text-cream transition-colors hover:bg-gold-dark sm:text-base"
         >
           <IconCalendar className="h-4 w-4" />
           Online buchen
-        </a>
+        </BookingTrigger>
         <a
           href={site.accountUrl}
           target="_blank"
@@ -48,7 +46,7 @@ export default function Booking() {
                   <p className="mt-2 text-sm leading-relaxed text-ink/65">{category.description}</p>
                 ) : null}
               </div>
-              <span className="shrink-0 rounded-full bg-ink px-3 py-1 text-xs font-medium uppercase tracking-[0.2em] text-gold">
+              <span className="shrink-0 rounded-full bg-ink px-3 py-1 text-xs font-medium uppercase tracking-[0.2em] text-cream">
                 {category.moreCount ? `+ ${category.moreCount} weitere` : "Details"}
               </span>
             </summary>

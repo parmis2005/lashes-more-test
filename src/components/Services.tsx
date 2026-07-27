@@ -1,4 +1,5 @@
 import { serviceCategories, site } from "@/lib/data";
+import BookingTrigger from "./BookingTrigger";
 
 export default function Services() {
   return (
@@ -49,14 +50,11 @@ export default function Services() {
             online buchbare Services erreichst du uns zusätzlich per WhatsApp.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
-            <a
-              href={site.bookingUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+            <BookingTrigger
               className="rounded-full bg-gold px-7 py-3.5 text-sm font-medium text-ink transition-colors hover:bg-gold-light"
             >
               Komplette Onlinebuchung öffnen
-            </a>
+            </BookingTrigger>
             <a
               href={site.whatsappHref}
               target="_blank"

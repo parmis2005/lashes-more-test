@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Dancing_Script, Poppins } from "next/font/google";
+import BookingModal from "@/components/BookingModal";
 import "./globals.css";
 
 const heading = Playfair_Display({
@@ -47,7 +48,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="de" className={`${heading.variable} ${script.variable} ${body.variable}`}>
-      <body className="font-sans antialiased bg-cream text-ink">{children}</body>
+      <body className="bg-cream font-sans text-ink antialiased">
+        {children}
+        <BookingModal />
+      </body>
     </html>
   );
 }
