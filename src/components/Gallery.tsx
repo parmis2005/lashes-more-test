@@ -5,6 +5,13 @@ import Image from "next/image";
 import { galleryImages, locations, site, teamValues } from "@/lib/data";
 import { IconChevronLeft, IconChevronRight, IconClose } from "./icons";
 
+const studioGroups = locations.map((location) => ({
+  location,
+  images: galleryImages
+    .map((image, index) => ({ image, index }))
+    .filter(({ image }) => location.name.startsWith(image.location)),
+}));
+
 export default function Gallery() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
@@ -96,33 +103,37 @@ export default function Gallery() {
           </div>
         </div>
 
-        <div className="mt-20 grid grid-cols-2 gap-4 auto-rows-[160px] sm:grid-cols-3 sm:gap-5 sm:auto-rows-[200px] lg:grid-cols-4 lg:auto-rows-[220px]">
-          {galleryImages.map((image, index) => (
-            <button
-              key={image.src}
-              type="button"
-              onClick={() => setActiveIndex(index)}
-              className={`group relative overflow-hidden rounded-2xl shadow-sm ring-1 ring-ink/5 transition-all duration-300 hover:shadow-xl hover:ring-gold/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold ${
-                image.featured ? "col-span-2 row-span-2" : "col-span-1 row-span-1"
-              }`}
-            >
-              <Image
-                src={image.src}
-                alt={image.alt}
-                fill
-                sizes="(min-width: 1024px) 24vw, (min-width: 640px) 32vw, 48vw"
-                className="object-cover transition-transform duration-500 ease-out group-hover:scale-110"
-              />
-              <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/0 to-ink/0 opacity-70 transition-opacity duration-300 group-hover:opacity-90" />
-              <span className="absolute left-3 top-3 rounded-full bg-cream/90 px-3 py-1 text-[10px] font-medium uppercase tracking-wider text-ink/70 backdrop-blur-sm">
-                {image.location}
-              </span>
-              <span className="absolute inset-x-0 bottom-0 translate-y-1 p-4 text-left text-xs leading-snug text-cream/90 transition-transform duration-300 group-hover:translate-y-0 sm:text-sm">
-                {image.alt}
-              </span>
-            </button>
-          ))}
-        </div>
+        {studioGroups.map(({ location, images }, groupIndex) => (
+          <div key={location.id} className={groupIndex === 0 ? "mt-20" : "mt-16"}>
+            <div className="flex items-baseline justify-between gap-4 border-b border-ink/10 pb-4">
+              <h3 className="font-serif text-xl font-semibold text-ink sm:text-2xl">{location.name}</h3>
+              <span className="hidden text-sm text-ink/50 sm:inline">{location.street}, {location.postalCity}</span>
+            </div>
+
+            <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-5 lg:grid-cols-4">
+              {images.map(({ image, index }) => (
+                <button
+                  key={image.src}
+                  type="button"
+                  onClick={() => setActiveIndex(index)}
+                  className="group relative aspect-[4/3] overflow-hidden rounded-2xl shadow-sm ring-1 ring-ink/5 transition-all duration-300 hover:shadow-xl hover:ring-gold/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+                >
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    fill
+                    sizes="(min-width: 1024px) 24vw, (min-width: 640px) 32vw, 48vw"
+                    className="object-cover transition-transform duration-500 ease-out group-hover:scale-110"
+                  />
+                  <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/0 to-ink/0 opacity-0 transition-opacity duration-300 group-hover:opacity-90" />
+                  <span className="absolute inset-x-0 bottom-0 translate-y-2 p-4 text-left text-xs leading-snug text-cream/90 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 sm:text-sm">
+                    {image.alt}
+                  </span>
+                </button>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
 
       {activeIndex !== null && (
