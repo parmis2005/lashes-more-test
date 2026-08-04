@@ -5,7 +5,7 @@ export const site = {
   name: "Lashes&more",
   slogan: "Besonders gut.",
   description:
-    "Lashes&more in Wuppertal ist dein Studio für Wimpernverlängerung, Lashlifting, Permanent Make-up, Kosmetik und ästhetische Behandlungen – mit 4,9 von 5 Sternen aus über 690 Bewertungen.",
+    "Dein Studio in Wuppertal für Wimpernverlängerung, Lashlifting, Permanent Make-up, Kosmetik und ästhetische Behandlungen.",
   officialDescription:
     "Willkommen bei Lashes & More: ein professionelles Kosmetikstudio in Wuppertal mit langjähriger Erfahrung, ehrlicher Beratung und familiärer Wohlfühlatmosphäre.",
   phoneDisplay: "0162 4888878",

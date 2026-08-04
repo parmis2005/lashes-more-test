@@ -52,14 +52,14 @@ export default function Booking() {
             key={category.id}
             className="rounded-2xl border border-ink/10 bg-cream-soft/55 p-6 shadow-sm open:border-gold/35 open:bg-cream-soft"
           >
-            <summary className="flex cursor-pointer list-none items-start justify-between gap-6">
-              <div>
+            <summary className="flex cursor-pointer list-none flex-col items-start gap-3 sm:flex-row sm:items-start sm:justify-between sm:gap-6">
+              <div className="min-w-0">
                 <h3 className="font-serif text-xl font-semibold text-ink">{category.title}</h3>
                 {category.description ? (
                   <p className="mt-2 text-sm leading-relaxed text-ink/65">{category.description}</p>
                 ) : null}
               </div>
-              <span className="inline-flex h-6.5 w-31 shrink-0 items-center justify-center rounded-full bg-ink px-2 text-center text-[10px] font-medium uppercase tracking-[0.16em] text-cream">
+              <span className="inline-flex h-6.5 shrink-0 items-center justify-center whitespace-nowrap rounded-full bg-ink px-3 text-center text-[10px] font-medium uppercase tracking-[0.16em] text-cream">
                 {category.moreCount ? `+ ${category.moreCount} weitere` : "Details"}
               </span>
             </summary>
