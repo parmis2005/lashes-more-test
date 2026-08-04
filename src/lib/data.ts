@@ -559,11 +559,11 @@ export const reviews: Review[] = [
 
 export const navLinks = [
   { href: "#home", label: "Home" },
-  { href: "#online-buchung", label: "Onlinebuchung" },
-  { href: "#team", label: "Team" },
   { href: "#ueber-uns", label: "Über uns" },
   { href: "#leistungen", label: "Leistungen" },
   { href: "#galerie", label: "Galerie" },
+  { href: "#team", label: "Team" },
   { href: "#bewertungen", label: "Bewertungen" },
+  { href: "#online-buchung", label: "Onlinebuchung" },
   { href: "#kontakt", label: "Kontakt" },
 ];

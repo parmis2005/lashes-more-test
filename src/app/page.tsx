@@ -1,14 +1,14 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Highlights from "@/components/Highlights";
-import Booking from "@/components/Booking";
-import Team from "@/components/Team";
 import About from "@/components/About";
 import Services from "@/components/Services";
 import Gallery from "@/components/Gallery";
+import Team from "@/components/Team";
 import Reviews from "@/components/Reviews";
-import LocationsContact from "@/components/LocationsContact";
+import Booking from "@/components/Booking";
 import CtaBanner from "@/components/CtaBanner";
+import LocationsContact from "@/components/LocationsContact";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
@@ -19,14 +19,14 @@ export default function Home() {
       <main>
         <Hero />
         <Highlights />
-        <Booking />
-        <Team />
         <About />
         <Services />
         <Gallery />
+        <Team />
         <Reviews />
-        <LocationsContact />
+        <Booking />
         <CtaBanner />
+        <LocationsContact />
       </main>
       <Footer />
       <WhatsAppButton />

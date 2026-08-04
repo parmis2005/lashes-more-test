@@ -31,8 +31,13 @@ export default function Header() {
       }`}
     >
       <div className="mx-auto flex max-w-[104rem] items-center gap-6 px-5 py-4 sm:px-8 lg:px-10">
-        <Link href="#home" className="shrink-0 font-script text-[2rem] leading-none text-ink 2xl:text-[2.2rem]">
-          Lashes<span className="text-gold">&</span>more
+        <Link href="#home" className="flex shrink-0 flex-col leading-none">
+          <span className="font-script text-[2rem] leading-none text-ink 2xl:text-[2.2rem]">
+            Lashes<span className="text-gold">&</span>more
+          </span>
+          <span className="mt-0.5 text-[0.65rem] font-medium uppercase tracking-[0.25em] text-gold-dark">
+            Wuppertal
+          </span>
         </Link>
 
         <nav className="hidden min-w-0 flex-1 items-center justify-center gap-4 xl:flex 2xl:gap-5">

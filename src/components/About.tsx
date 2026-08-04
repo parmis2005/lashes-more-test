@@ -38,7 +38,8 @@ export default function About() {
           <h2 className="mt-3 font-serif text-3xl font-semibold text-ink sm:text-4xl">
             Dein Studio für Wimpern, Kosmetik &amp; ästhetische Behandlungen
           </h2>
-          <p className="mt-5 leading-relaxed text-ink/70">
+          <div className="mt-6 h-0.5 w-14 bg-gradient-to-r from-gold to-gold-dark" />
+          <p className="mt-6 leading-relaxed text-ink/70">
             {site.officialDescription} Bei Lashes&amp;more erwartet dich professionelle Beauty-
             Arbeit in herzlicher, ehrlicher und entspannter Atmosphäre.
           </p>

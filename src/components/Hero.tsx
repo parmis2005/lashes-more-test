@@ -1,9 +1,22 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { site, ratingSummary, locations, officeHoursSummary } from "@/lib/data";
-import { IconCalendar, IconClock, IconMapPin, IconStar, IconUser } from "./icons";
+import { IconCalendar, IconChevronDown, IconClock, IconMapPin, IconStar, IconUser } from "./icons";
 import BookingTrigger from "./BookingTrigger";
 
 export default function Hero() {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const t = setTimeout(() => setVisible(true), 100);
+    return () => clearTimeout(t);
+  }, []);
+
+  const fade = (delay: string) =>
+    `transition-all duration-1000 ${delay} ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`;
+
   return (
     <section id="home" className="relative overflow-hidden pt-32 pb-20 sm:pt-40 sm:pb-28">
       <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-cream-soft via-cream to-cream" />
@@ -11,21 +24,21 @@ export default function Hero() {
 
       <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 sm:px-8 lg:grid-cols-2 lg:gap-10 lg:px-10">
         <div>
-          <p className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/10 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-gold-dark">
+          <p className={`inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/10 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-gold-dark ${fade("delay-0")}`}>
             Wimpern · Kosmetik · Ästhetik in Wuppertal
           </p>
 
-          <h1 className="mt-6 text-4xl leading-[1.1] text-ink sm:text-5xl lg:text-6xl">
+          <h1 className={`mt-6 text-4xl leading-[1.1] text-ink sm:text-5xl lg:text-6xl ${fade("delay-150")}`}>
             <span className="font-serif font-semibold">Lashes</span>
             <span className="font-script text-gold">&amp;more</span>
           </h1>
-          <p className="mt-4 font-script text-3xl text-gold-dark sm:text-4xl">{site.slogan}</p>
+          <p className={`mt-4 font-script text-3xl text-gold-dark sm:text-4xl ${fade("delay-150")}`}>{site.slogan}</p>
 
-          <p className="mt-6 max-w-xl text-base leading-relaxed text-ink/70 sm:text-lg">
+          <p className={`mt-6 max-w-xl text-base leading-relaxed text-ink/70 sm:text-lg ${fade("delay-300")}`}>
             {site.description}
           </p>
 
-          <div className="mt-8 flex flex-wrap items-center gap-4">
+          <div className={`mt-8 flex flex-wrap items-center gap-4 ${fade("delay-300")}`}>
             <BookingTrigger
               className="inline-flex items-center gap-2 rounded-full bg-ink px-7 py-3.5 text-sm font-medium text-cream shadow-sm transition-colors hover:bg-gold-dark sm:text-base"
             >
@@ -90,6 +103,14 @@ export default function Hero() {
           </div>
         </div>
       </div>
+
+      <a
+        href="#highlights"
+        aria-label="Nach unten scrollen"
+        className="absolute bottom-4 left-1/2 hidden -translate-x-1/2 text-ink/40 transition-colors hover:text-gold-dark sm:flex"
+      >
+        <IconChevronDown className="h-6 w-6 animate-bounce" />
+      </a>
     </section>
   );
 }
