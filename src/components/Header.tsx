@@ -40,7 +40,7 @@ export default function Header() {
           </span>
         </Link>
 
-        <nav className="hidden min-w-0 flex-1 items-center justify-center gap-4 xl:flex 2xl:gap-5">
+        <nav className="hidden min-w-0 flex-1 items-center justify-center gap-7 xl:flex 2xl:gap-9">
           {navLinks.map((link) => (
             <Link
               key={link.href}
