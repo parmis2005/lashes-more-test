@@ -78,7 +78,7 @@ export default function Header() {
         <button
           type="button"
           aria-label={open ? "Menü schließen" : "Menü öffnen"}
-          className="flex h-10 w-10 items-center justify-center rounded-full border border-ink/15 text-ink xl:hidden"
+          className="ml-auto flex h-10 w-10 items-center justify-center rounded-full border border-ink/15 text-ink xl:hidden"
           onClick={() => setOpen((v) => !v)}
         >
           {open ? <IconClose className="h-5 w-5" /> : <IconMenu className="h-5 w-5" />}
