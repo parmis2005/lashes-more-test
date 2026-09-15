@@ -97,9 +97,6 @@ export default function Hero() {
               className="h-auto w-full rounded-[1.5rem]"
             />
             <span className="pointer-events-none absolute inset-0 rounded-[2rem] ring-1 ring-inset ring-cream/10" />
-            <span className="pointer-events-none absolute -right-3 -top-3 flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-gold to-rose text-cream shadow-lg animate-glow-pulse">
-              <IconStar className="h-5 w-5" />
-            </span>
           </div>
         </div>
       </div>
