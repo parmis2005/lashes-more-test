@@ -16,7 +16,8 @@ export default function LocationsContact() {
   return (
     <section id="kontakt" className="relative overflow-hidden bg-charcoal py-20 sm:py-28">
       <div className="pointer-events-none absolute -left-24 top-0 -z-0 h-72 w-72 animate-float-slow rounded-full bg-gold/10 blur-3xl" />
-      <div className="pointer-events-none absolute -right-24 bottom-0 -z-0 h-72 w-72 animate-float-slower rounded-full bg-rose/10 blur-3xl" />
+      <div className="pointer-events-none absolute -right-24 bottom-0 -z-0 h-72 w-72 animate-float-slower rounded-full bg-bordeaux/15 blur-3xl" />
+      <div className="pointer-events-none absolute left-1/3 bottom-10 -z-0 h-56 w-56 animate-float-slow rounded-full bg-emerald/10 blur-3xl" />
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-xs font-medium uppercase tracking-[0.25em] text-gold">Standorte &amp; Kontakt</p>

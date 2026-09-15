@@ -89,7 +89,7 @@ export default function Services() {
             online buchbare Services erreichst du uns zusätzlich per WhatsApp.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
-            <BookingTrigger className="shine-btn rounded-full bg-ink px-7 py-3.5 text-sm font-medium text-cream shadow-[0_0_25px_-10px_rgba(182,144,90,0.7)] transition-all hover:bg-gradient-to-r hover:from-gold-dark hover:to-rose-dark">
+            <BookingTrigger className="shine-btn rounded-full bg-ink px-7 py-3.5 text-sm font-medium text-cream shadow-[0_0_25px_-10px_rgba(182,144,90,0.7)] transition-all hover:bg-gradient-to-r hover:from-gold-dark hover:to-bordeaux-dark">
               Jetzt online buchen
             </BookingTrigger>
             <a

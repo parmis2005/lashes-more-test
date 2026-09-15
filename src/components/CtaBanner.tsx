@@ -9,7 +9,7 @@ export default function CtaBanner() {
         className="absolute inset-0 -z-20 bg-cover bg-center bg-fixed"
         style={{ backgroundImage: "url('/images/gallery/doppelbehandlung.jpg')" }}
       />
-      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-ink/90 via-ink/75 to-rose-dark/50" />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-ink/90 via-ink/75 to-bordeaux-dark/50" />
       <Sparkles />
 
       <div className="mx-auto flex max-w-3xl flex-col items-center gap-6 px-5 text-center sm:px-8">

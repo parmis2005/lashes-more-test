@@ -1,17 +1,23 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-ink: #201c1a;
-  --color-charcoal: #2c2724;
-  --color-cream: #faf6f0;
-  --color-cream-soft: #f2ece2;
-  --color-sand: #ece2d1;
+  --color-ink: #221019;
+  --color-charcoal: #2f1b26;
+  --color-cream: #fdf8f9;
+  --color-cream-soft: #f6eaee;
+  --color-sand: #f0dde3;
   --color-gold: #b6905a;
   --color-gold-light: #d8bd8f;
   --color-gold-dark: #8a6a3d;
   --color-rose: #e28fa3;
   --color-rose-light: #f5c6d3;
   --color-rose-dark: #b85a72;
+  --color-bordeaux: #7c2740;
+  --color-bordeaux-light: #a84f68;
+  --color-bordeaux-dark: #55192c;
+  --color-emerald: #1f6b52;
+  --color-emerald-light: #4f9b82;
+  --color-emerald-dark: #124233;
   --font-sans: var(--font-body);
   --font-serif: var(--font-heading);
   --font-script: var(--font-dancing-script);
@@ -43,8 +49,8 @@ body::before {
   pointer-events: none;
   background:
     radial-gradient(circle at 12% 18%, rgba(182, 144, 90, 0.14), transparent 42%),
-    radial-gradient(circle at 88% 12%, rgba(226, 143, 163, 0.12), transparent 40%),
-    radial-gradient(circle at 80% 85%, rgba(182, 144, 90, 0.1), transparent 45%);
+    radial-gradient(circle at 88% 12%, rgba(124, 39, 64, 0.1), transparent 40%),
+    radial-gradient(circle at 80% 85%, rgba(226, 143, 163, 0.1), transparent 45%);
 }
 
 /* --- Glam effects: glow, shimmer, sparkle --- */
@@ -131,6 +137,10 @@ body::before {
   box-shadow: 0 0 50px -8px rgba(226, 143, 163, 0.55), 0 0 18px -4px rgba(226, 143, 163, 0.4);
 }
 
+.glow-bordeaux {
+  box-shadow: 0 0 50px -8px rgba(124, 39, 64, 0.55), 0 0 18px -4px rgba(124, 39, 64, 0.4);
+}
+
 .sparkle-dot {
   animation: sparkle-twinkle 2.6s ease-in-out infinite;
 }
@@ -139,6 +149,7 @@ body::before {
   background-image: linear-gradient(
     90deg,
     var(--color-gold-dark),
+    var(--color-bordeaux),
     var(--color-rose),
     var(--color-gold-light),
     var(--color-gold-dark)

@@ -56,7 +56,7 @@ export default function Hero() {
           </div>
 
           <div className={`mt-6 flex flex-wrap items-center gap-4 ${fade("delay-500")}`}>
-            <BookingTrigger className="shine-btn inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-ink to-ink px-7 py-3.5 text-sm font-medium text-cream shadow-[0_8px_30px_-8px_rgba(182,144,90,0.65)] transition-all hover:shadow-[0_8px_36px_-6px_rgba(182,144,90,0.85)] hover:from-gold-dark hover:to-rose-dark sm:text-base">
+            <BookingTrigger className="shine-btn inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-ink to-ink px-7 py-3.5 text-sm font-medium text-cream shadow-[0_8px_30px_-8px_rgba(182,144,90,0.65)] transition-all hover:shadow-[0_8px_36px_-6px_rgba(182,144,90,0.85)] hover:from-gold-dark hover:to-bordeaux-dark sm:text-base">
               <IconCalendar className="h-4 w-4" />
               Online buchen
             </BookingTrigger>

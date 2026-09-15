@@ -41,7 +41,7 @@ export default function Booking() {
 
       <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
         <BookingTrigger
-          className="shine-btn inline-flex items-center gap-2 rounded-full bg-ink px-7 py-3.5 text-sm font-medium text-cream shadow-[0_0_25px_-10px_rgba(182,144,90,0.7)] transition-all hover:bg-gradient-to-r hover:from-gold-dark hover:to-rose-dark sm:text-base"
+          className="shine-btn inline-flex items-center gap-2 rounded-full bg-ink px-7 py-3.5 text-sm font-medium text-cream shadow-[0_0_25px_-10px_rgba(182,144,90,0.7)] transition-all hover:bg-gradient-to-r hover:from-gold-dark hover:to-bordeaux-dark sm:text-base"
         >
           <IconCalendar className="h-4 w-4" />
           Online buchen

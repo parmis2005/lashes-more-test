@@ -72,7 +72,7 @@ export default function Gallery() {
 
             <a
               href="#kontakt"
-              className="shine-btn mt-10 inline-flex items-center gap-2 rounded-full bg-ink px-7 py-3.5 text-sm font-medium text-cream shadow-[0_0_25px_-10px_rgba(182,144,90,0.7)] transition-all hover:bg-gradient-to-r hover:from-gold-dark hover:to-rose-dark"
+              className="shine-btn mt-10 inline-flex items-center gap-2 rounded-full bg-ink px-7 py-3.5 text-sm font-medium text-cream shadow-[0_0_25px_-10px_rgba(182,144,90,0.7)] transition-all hover:bg-gradient-to-r hover:from-gold-dark hover:to-bordeaux-dark"
             >
               Studio besuchen
             </a>

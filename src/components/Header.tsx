@@ -63,7 +63,7 @@ export default function Header() {
             Mein Konto
           </a>
           <a
-            className="shine-btn inline-flex shrink-0 items-center gap-2 rounded-full bg-ink px-4 py-2.5 text-sm font-medium whitespace-nowrap text-cream shadow-[0_0_20px_-8px_rgba(182,144,90,0.7)] transition-all hover:bg-gradient-to-r hover:from-gold-dark hover:to-rose-dark hover:shadow-[0_0_26px_-4px_rgba(182,144,90,0.9)] 2xl:px-5"
+            className="shine-btn inline-flex shrink-0 items-center gap-2 rounded-full bg-ink px-4 py-2.5 text-sm font-medium whitespace-nowrap text-cream shadow-[0_0_20px_-8px_rgba(182,144,90,0.7)] transition-all hover:bg-gradient-to-r hover:from-gold-dark hover:to-bordeaux-dark hover:shadow-[0_0_26px_-4px_rgba(182,144,90,0.9)] 2xl:px-5"
             href="#online-buchung"
             onClick={(event) => {
               event.preventDefault();

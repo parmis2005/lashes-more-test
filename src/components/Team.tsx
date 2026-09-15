@@ -33,7 +33,8 @@ export default function Team() {
 
           <div className="relative overflow-hidden rounded-[2rem] bg-ink p-8 text-cream shadow-xl sm:p-10">
             <div className="pointer-events-none absolute -right-10 -top-10 -z-0 h-40 w-40 animate-float-slow rounded-full bg-gold/25 blur-3xl" />
-            <div className="pointer-events-none absolute -bottom-10 -left-10 -z-0 h-40 w-40 animate-float-slower rounded-full bg-rose/20 blur-3xl" />
+            <div className="pointer-events-none absolute -bottom-10 -left-10 -z-0 h-40 w-40 animate-float-slower rounded-full bg-bordeaux/25 blur-3xl" />
+            <div className="pointer-events-none absolute right-1/4 bottom-0 -z-0 h-28 w-28 animate-float-slow rounded-full bg-emerald/15 blur-3xl" />
             <p className="relative text-xs font-medium uppercase tracking-[0.25em] text-gold">
               Ansprechpartnerin
             </p>
