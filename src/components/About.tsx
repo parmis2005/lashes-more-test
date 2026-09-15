@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { academyNote, site } from "@/lib/data";
 import { IconSparkle } from "./icons";
 
@@ -8,22 +7,13 @@ export default function About() {
       <div className="grid items-center gap-16 lg:grid-cols-2 lg:gap-20">
         <div className="relative mb-16 sm:mb-20 lg:mb-0">
           <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[2rem] shadow-xl shadow-ink/10">
-            <Image
-              src="/images/gallery/studio-1-flur.jpg"
-              alt="Eingangsbereich von Studio 1, Anhalter Straße 8"
-              fill
-              sizes="(min-width: 1024px) 40vw, 90vw"
-              className="object-cover"
-            />
-          </div>
-
-          <div className="absolute -bottom-14 -right-4 h-36 w-32 rotate-3 overflow-hidden rounded-2xl border-4 border-cream shadow-xl shadow-ink/15 transition-transform duration-300 hover:rotate-0 sm:-bottom-16 sm:-right-8 sm:h-48 sm:w-40">
-            <Image
-              src="/images/gallery/liege-branded.jpg"
-              alt="Behandlungsliege mit Lashes&more Logo"
-              fill
-              sizes="200px"
-              className="object-cover"
+            <video
+              src="/videos/pinload.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="h-full w-full object-cover"
             />
           </div>
 
