@@ -31,18 +31,20 @@ export default function Team() {
             </div>
           </div>
 
-          <div className="rounded-[2rem] bg-ink p-8 text-cream shadow-xl sm:p-10">
-            <p className="text-xs font-medium uppercase tracking-[0.25em] text-gold">
+          <div className="relative overflow-hidden rounded-[2rem] bg-ink p-8 text-cream shadow-xl sm:p-10">
+            <div className="pointer-events-none absolute -right-10 -top-10 -z-0 h-40 w-40 animate-float-slow rounded-full bg-gold/25 blur-3xl" />
+            <div className="pointer-events-none absolute -bottom-10 -left-10 -z-0 h-40 w-40 animate-float-slower rounded-full bg-rose/20 blur-3xl" />
+            <p className="relative text-xs font-medium uppercase tracking-[0.25em] text-gold">
               Ansprechpartnerin
             </p>
             {teamMembers.map((member) => (
-              <div key={member.name} className="mt-5 rounded-2xl border border-cream/10 bg-cream/[0.04] p-6">
-                <h3 className="font-serif text-3xl font-semibold text-gold">
+              <div key={member.name} className="relative mt-5 rounded-2xl border border-cream/10 bg-cream/[0.04] p-6 backdrop-blur-sm">
+                <h3 className="font-serif text-3xl font-semibold text-glow-gradient">
                   <a
                     href={member.profileUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="transition-colors hover:text-gold-light"
+                    className="transition-opacity hover:opacity-80"
                   >
                     {member.name}
                   </a>
@@ -62,9 +64,9 @@ export default function Team() {
               </div>
             ))}
 
-            <div className="mt-6 flex flex-col gap-3">
+            <div className="relative mt-6 flex flex-col gap-3">
               <BookingTrigger
-                className="inline-flex items-center justify-center rounded-full bg-gold px-6 py-3 text-sm font-medium text-ink transition-colors hover:bg-gold-light"
+                className="shine-btn inline-flex items-center justify-center rounded-full bg-gradient-to-r from-gold to-rose px-6 py-3 text-sm font-medium text-ink shadow-[0_10px_30px_-8px_rgba(182,144,90,0.7)] transition-all hover:shadow-[0_10px_36px_-4px_rgba(182,144,90,0.9)]"
               >
                 Online Terminbuchung öffnen
               </BookingTrigger>

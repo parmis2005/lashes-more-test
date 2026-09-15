@@ -14,20 +14,22 @@ import BookingTrigger from "./BookingTrigger";
 
 export default function LocationsContact() {
   return (
-    <section id="kontakt" className="bg-charcoal py-20 sm:py-28">
-      <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+    <section id="kontakt" className="relative overflow-hidden bg-charcoal py-20 sm:py-28">
+      <div className="pointer-events-none absolute -left-24 top-0 -z-0 h-72 w-72 animate-float-slow rounded-full bg-gold/10 blur-3xl" />
+      <div className="pointer-events-none absolute -right-24 bottom-0 -z-0 h-72 w-72 animate-float-slower rounded-full bg-rose/10 blur-3xl" />
+      <div className="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-xs font-medium uppercase tracking-[0.25em] text-gold">Standorte &amp; Kontakt</p>
           <h2 className="mt-3 font-serif text-3xl font-semibold text-cream sm:text-4xl">
             Besuch uns in Wuppertal
           </h2>
-          <div className="mx-auto mt-6 h-0.5 w-14 bg-gradient-to-r from-gold to-gold-dark" />
+          <div className="mx-auto mt-6 h-0.5 w-14 bg-gradient-to-r from-gold via-rose to-gold-dark" />
           <p className="mt-6 leading-relaxed text-cream/60">{officeHoursNote}</p>
         </div>
 
         <div className="mt-14 grid gap-8 lg:grid-cols-2">
           {locations.map((location) => (
-            <div key={location.id} className="overflow-hidden rounded-2xl border border-cream/10 bg-cream/[0.04] shadow-sm backdrop-blur-sm">
+            <div key={location.id} className="overflow-hidden rounded-2xl border border-cream/10 bg-cream/[0.04] shadow-sm backdrop-blur-sm transition-all duration-300 hover:border-gold/30 hover:shadow-[0_0_35px_-12px_rgba(182,144,90,0.6)]">
               <div className="h-56 w-full sm:h-64">
                 <iframe
                   title={`Karte ${location.name}`}
@@ -123,7 +125,7 @@ export default function LocationsContact() {
             </div>
             <div className="flex flex-col gap-3">
               <BookingTrigger
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-gold px-6 py-3 text-sm font-medium text-ink transition-colors hover:bg-gold-light"
+                className="shine-btn inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-gold to-rose px-6 py-3 text-sm font-medium text-ink shadow-[0_10px_30px_-8px_rgba(182,144,90,0.6)] transition-all hover:shadow-[0_10px_35px_-4px_rgba(182,144,90,0.85)]"
               >
                 <IconCalendar className="h-4 w-4" />
                 Online buchen

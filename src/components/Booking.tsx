@@ -30,7 +30,7 @@ export default function Booking() {
 
       <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
         <BookingTrigger
-          className="inline-flex items-center gap-2 rounded-full bg-ink px-7 py-3.5 text-sm font-medium text-cream transition-colors hover:bg-gold-dark sm:text-base"
+          className="shine-btn inline-flex items-center gap-2 rounded-full bg-ink px-7 py-3.5 text-sm font-medium text-cream shadow-[0_0_25px_-10px_rgba(182,144,90,0.7)] transition-all hover:bg-gradient-to-r hover:from-gold-dark hover:to-rose-dark sm:text-base"
         >
           <IconCalendar className="h-4 w-4" />
           Online buchen
@@ -50,7 +50,7 @@ export default function Booking() {
         {sortedBookingCategories.map((category) => (
           <details
             key={category.id}
-            className="rounded-2xl border border-ink/10 bg-cream-soft/55 p-6 shadow-sm open:border-gold/35 open:bg-cream-soft"
+            className="rounded-2xl border border-ink/10 bg-cream-soft/55 p-6 shadow-sm transition-shadow duration-300 open:border-gold/35 open:bg-cream-soft open:shadow-[0_0_30px_-14px_rgba(182,144,90,0.6)]"
           >
             <summary className="flex cursor-pointer list-none flex-col items-start gap-3 sm:flex-row sm:items-start sm:justify-between sm:gap-6">
               <div className="min-w-0">
@@ -59,7 +59,7 @@ export default function Booking() {
                   <p className="mt-2 text-sm leading-relaxed text-ink/65">{category.description}</p>
                 ) : null}
               </div>
-              <span className="inline-flex h-6.5 shrink-0 items-center justify-center whitespace-nowrap rounded-full bg-ink px-3 text-center text-[10px] font-medium uppercase tracking-[0.16em] text-cream">
+              <span className="inline-flex h-6.5 shrink-0 items-center justify-center whitespace-nowrap rounded-full bg-gradient-to-r from-gold to-rose px-3 text-center text-[10px] font-medium uppercase tracking-[0.16em] text-cream">
                 {category.moreCount ? `+ ${category.moreCount} weitere` : "Details"}
               </span>
             </summary>

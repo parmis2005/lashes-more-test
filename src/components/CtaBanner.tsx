@@ -1,5 +1,6 @@
 import { site } from "@/lib/data";
 import BookingTrigger from "./BookingTrigger";
+import Sparkles from "./Sparkles";
 
 export default function CtaBanner() {
   return (
@@ -8,7 +9,8 @@ export default function CtaBanner() {
         className="absolute inset-0 -z-20 bg-cover bg-center bg-fixed"
         style={{ backgroundImage: "url('/images/gallery/doppelbehandlung.jpg')" }}
       />
-      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-ink/90 via-ink/75 to-gold-dark/60" />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-ink/90 via-ink/75 to-rose-dark/50" />
+      <Sparkles />
 
       <div className="mx-auto flex max-w-3xl flex-col items-center gap-6 px-5 text-center sm:px-8">
         <p className="text-xs font-medium uppercase tracking-[0.25em] text-gold">
@@ -23,7 +25,7 @@ export default function CtaBanner() {
         </p>
         <div className="mt-2 flex flex-wrap items-center justify-center gap-4">
           <BookingTrigger
-            className="rounded-full bg-gold px-7 py-3.5 text-sm font-medium text-ink transition-colors hover:bg-gold-light sm:text-base"
+            className="shine-btn rounded-full bg-gradient-to-r from-gold to-rose px-7 py-3.5 text-sm font-medium text-ink shadow-[0_10px_35px_-8px_rgba(226,143,163,0.7)] transition-all hover:shadow-[0_10px_40px_-4px_rgba(226,143,163,0.9)] sm:text-base"
           >
             Jetzt online buchen
           </BookingTrigger>

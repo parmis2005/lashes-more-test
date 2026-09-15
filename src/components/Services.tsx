@@ -38,9 +38,9 @@ export default function Services() {
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-xs font-medium uppercase tracking-[0.25em] text-gold-dark">Leistungen</p>
           <h2 className="mt-3 font-serif text-3xl font-semibold text-ink sm:text-4xl">
-            Behandlungen, die <span className="font-script text-gold-dark">wirken</span>
+            Behandlungen, die <span className="font-script text-glow-gradient">wirken</span>
           </h2>
-          <div className="mx-auto mt-6 h-0.5 w-14 bg-gradient-to-r from-gold to-gold-dark" />
+          <div className="mx-auto mt-6 h-0.5 w-14 bg-gradient-to-r from-gold via-rose to-gold-dark" />
           <p className="mt-6 leading-relaxed text-ink/70">
             Ein Auszug aus unserem Angebot. Die komplette Preis- und Leistungsliste mit allen
             Kategorien findest du in der Onlinebuchung weiter unten.
@@ -53,7 +53,7 @@ export default function Services() {
             return (
               <div
                 key={category.id}
-                className="group relative overflow-hidden rounded-2xl bg-cream-soft shadow-sm ring-1 ring-ink/5 transition-shadow hover:shadow-lg"
+                className="group relative overflow-hidden rounded-2xl bg-cream-soft shadow-sm ring-1 ring-ink/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_45px_-12px_rgba(182,144,90,0.5)] hover:ring-gold/40"
               >
                 <div className="relative aspect-[3/4] overflow-hidden">
                   <Image
@@ -64,7 +64,7 @@ export default function Services() {
                     className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                   />
                   <span className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/0 to-ink/0" />
-                  <span className="absolute left-4 top-4 rounded-full bg-cream/90 px-3 py-1 text-[10px] font-medium uppercase tracking-wider text-gold-dark backdrop-blur-sm">
+                  <span className="absolute left-4 top-4 rounded-full bg-gradient-to-r from-gold to-rose px-3 py-1 text-[10px] font-medium uppercase tracking-wider text-cream shadow-[0_4px_14px_-4px_rgba(182,144,90,0.8)]">
                     {meta.tag}
                   </span>
                 </div>
@@ -89,7 +89,7 @@ export default function Services() {
             online buchbare Services erreichst du uns zusätzlich per WhatsApp.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
-            <BookingTrigger className="rounded-full bg-ink px-7 py-3.5 text-sm font-medium text-cream transition-colors hover:bg-gold-dark">
+            <BookingTrigger className="shine-btn rounded-full bg-ink px-7 py-3.5 text-sm font-medium text-cream shadow-[0_0_25px_-10px_rgba(182,144,90,0.7)] transition-all hover:bg-gradient-to-r hover:from-gold-dark hover:to-rose-dark">
               Jetzt online buchen
             </BookingTrigger>
             <a

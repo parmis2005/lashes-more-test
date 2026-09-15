@@ -3,7 +3,7 @@ import { IconStar } from "./icons";
 
 function Stars({ count, className }: { count: number; className?: string }) {
   return (
-    <div className={`flex gap-0.5 text-gold ${className ?? ""}`}>
+    <div className={`flex gap-0.5 text-gold drop-shadow-[0_0_5px_rgba(182,144,90,0.6)] ${className ?? ""}`}>
       {Array.from({ length: 5 }).map((_, i) => (
         <IconStar key={i} className="h-4 w-4" filled={i < count} />
       ))}
@@ -24,20 +24,21 @@ export default function Reviews() {
               Was unsere Kund:innen sagen
             </h2>
 
-            <div className="mt-8 rounded-2xl bg-ink p-7 text-cream shadow-lg">
-              <p className="font-serif text-5xl font-semibold text-gold">{ratingSummary.average}</p>
-              <Stars count={5} className="mt-3" />
-              <p className="mt-2 text-sm text-cream/70">
+            <div className="relative overflow-hidden rounded-2xl bg-ink p-7 text-cream shadow-[0_0_45px_-10px_rgba(182,144,90,0.5)]">
+              <div className="pointer-events-none absolute -right-8 -top-8 h-32 w-32 animate-float-slow rounded-full bg-gold/20 blur-3xl" />
+              <p className="relative font-serif text-5xl font-semibold text-glow-gradient">{ratingSummary.average}</p>
+              <Stars count={5} className="relative mt-3" />
+              <p className="relative mt-2 text-sm text-cream/70">
                 aus {total} Bewertungen ({ratingSummary.verifiedCount} verifiziert)
               </p>
 
-              <div className="mt-6 space-y-2">
+              <div className="relative mt-6 space-y-2">
                 {ratingSummary.histogram.map((row) => (
                   <div key={row.stars} className="flex items-center gap-3 text-xs text-cream/70">
                     <span className="w-10 shrink-0">{row.stars} Sterne</span>
                     <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-cream/15">
                       <div
-                        className="h-full rounded-full bg-gold"
+                        className="h-full rounded-full bg-gradient-to-r from-gold to-rose shadow-[0_0_8px_rgba(182,144,90,0.6)]"
                         style={{ width: `${Math.max((row.count / total) * 100, 2)}%` }}
                       />
                     </div>
@@ -52,7 +53,7 @@ export default function Reviews() {
             {reviews.map((review) => (
               <div
                 key={review.name + review.visited}
-                className="flex flex-col rounded-2xl border border-ink/8 bg-cream p-6 shadow-sm"
+                className="flex flex-col rounded-2xl border border-ink/8 bg-cream p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-gold/30 hover:shadow-[0_16px_35px_-14px_rgba(182,144,90,0.5)]"
               >
                 <Stars count={review.rating} />
                 <p className="mt-4 flex-1 text-sm leading-relaxed text-ink/75">&ldquo;{review.comment}&rdquo;</p>

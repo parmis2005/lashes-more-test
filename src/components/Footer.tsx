@@ -18,7 +18,7 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:px-10">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <p className="font-script text-3xl text-gold">Lashes&amp;more</p>
+            <p className="font-script text-3xl text-glow-gradient">Lashes&amp;more</p>
             <p className="mt-3 max-w-xs text-sm leading-relaxed text-cream/60">
               Wimpern, Kosmetik, Permanent Make-up und ästhetische Behandlungen in Wuppertal.
               {" "}{site.slogan}
@@ -29,7 +29,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-cream/20 text-cream hover:border-gold hover:text-gold"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-cream/20 text-cream transition-all duration-300 hover:border-gold hover:text-gold hover:shadow-[0_0_20px_-4px_rgba(182,144,90,0.8)]"
               >
                 <IconInstagram className="h-5 w-5" />
               </a>
@@ -38,7 +38,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-cream/20 text-cream hover:border-gold hover:text-gold"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-cream/20 text-cream transition-all duration-300 hover:border-gold hover:text-gold hover:shadow-[0_0_20px_-4px_rgba(182,144,90,0.8)]"
               >
                 <IconFacebook className="h-5 w-5" />
               </a>
@@ -47,7 +47,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="WhatsApp"
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-cream/20 text-cream hover:border-gold hover:text-gold"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-cream/20 text-cream transition-all duration-300 hover:border-gold hover:text-gold hover:shadow-[0_0_20px_-4px_rgba(182,144,90,0.8)]"
               >
                 <IconWhatsApp className="h-5 w-5" />
               </a>
@@ -56,7 +56,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="TikTok"
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-cream/20 text-cream hover:border-gold hover:text-gold"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-cream/20 text-cream transition-all duration-300 hover:border-gold hover:text-gold hover:shadow-[0_0_20px_-4px_rgba(182,144,90,0.8)]"
               >
                 <IconTikTok className="h-5 w-5" />
               </a>

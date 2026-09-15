@@ -33,7 +33,7 @@ export default function Header() {
       <div className="mx-auto flex max-w-[104rem] items-center gap-6 px-5 py-4 sm:px-8 lg:px-10">
         <Link href="#home" className="flex shrink-0 flex-col leading-none">
           <span className="font-script text-[2rem] leading-none text-ink 2xl:text-[2.2rem]">
-            Lashes<span className="text-gold">&</span>more
+            Lashes<span className="text-glow-gradient">&</span>more
           </span>
           <span className="mt-0.5 text-[0.65rem] font-medium uppercase tracking-[0.25em] text-gold-dark">
             Wuppertal
@@ -45,7 +45,7 @@ export default function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="shrink-0 whitespace-nowrap text-[0.95rem] font-medium tracking-wide text-ink/80 transition-colors hover:text-gold-dark 2xl:text-[1rem]"
+              className="relative shrink-0 whitespace-nowrap text-[0.95rem] font-medium tracking-wide text-ink/80 transition-colors after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 after:bg-gradient-to-r after:from-gold after:to-rose after:transition-all after:duration-300 hover:text-gold-dark hover:after:w-full 2xl:text-[1rem]"
             >
               {link.label}
             </Link>
@@ -63,7 +63,7 @@ export default function Header() {
             Mein Konto
           </a>
           <a
-            className="inline-flex shrink-0 items-center gap-2 rounded-full bg-ink px-4 py-2.5 text-sm font-medium whitespace-nowrap text-cream transition-colors hover:bg-gold-dark 2xl:px-5"
+            className="shine-btn inline-flex shrink-0 items-center gap-2 rounded-full bg-ink px-4 py-2.5 text-sm font-medium whitespace-nowrap text-cream shadow-[0_0_20px_-8px_rgba(182,144,90,0.7)] transition-all hover:bg-gradient-to-r hover:from-gold-dark hover:to-rose-dark hover:shadow-[0_0_26px_-4px_rgba(182,144,90,0.9)] 2xl:px-5"
             href="#online-buchung"
             onClick={(event) => {
               event.preventDefault();

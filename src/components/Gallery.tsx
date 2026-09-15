@@ -50,9 +50,9 @@ export default function Gallery() {
             </p>
             <h2 className="mt-3 font-serif text-3xl font-semibold text-ink sm:text-4xl">
               Echte Einblicke in
-              <span className="mt-1 block font-script text-3xl text-gold-dark">unsere Studios</span>
+              <span className="mt-1 block font-script text-3xl text-glow-gradient">unsere Studios</span>
             </h2>
-            <div className="mt-6 h-0.5 w-14 bg-gradient-to-r from-gold to-gold-dark" />
+            <div className="mt-6 h-0.5 w-14 bg-gradient-to-r from-gold via-rose to-gold-dark" />
 
             <p className="mt-6 leading-relaxed text-ink/70">{site.officialDescription}</p>
             <p className="mt-4 leading-relaxed text-ink/70">
@@ -72,7 +72,7 @@ export default function Gallery() {
 
             <a
               href="#kontakt"
-              className="mt-10 inline-flex items-center gap-2 rounded-full bg-ink px-7 py-3.5 text-sm font-medium text-cream transition-colors hover:bg-gold-dark"
+              className="shine-btn mt-10 inline-flex items-center gap-2 rounded-full bg-ink px-7 py-3.5 text-sm font-medium text-cream shadow-[0_0_25px_-10px_rgba(182,144,90,0.7)] transition-all hover:bg-gradient-to-r hover:from-gold-dark hover:to-rose-dark"
             >
               Studio besuchen
             </a>
@@ -99,7 +99,7 @@ export default function Gallery() {
                 />
               </div>
             </div>
-            <div className="absolute -bottom-4 -left-4 -z-10 h-24 w-24 rounded-2xl border border-gold/30 bg-gold/10" />
+            <div className="absolute -bottom-4 -left-4 -z-10 h-24 w-24 animate-float-slow rounded-2xl border border-gold/30 bg-gradient-to-br from-gold/20 to-rose/20 blur-[1px]" />
           </div>
         </div>
 
@@ -116,7 +116,7 @@ export default function Gallery() {
                   key={image.src}
                   type="button"
                   onClick={() => setActiveIndex(index)}
-                  className="group relative aspect-[4/3] overflow-hidden rounded-2xl shadow-sm ring-1 ring-ink/5 transition-all duration-300 hover:shadow-xl hover:ring-gold/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+                  className="group relative aspect-[4/3] overflow-hidden rounded-2xl shadow-sm ring-1 ring-ink/5 transition-all duration-300 hover:shadow-[0_16px_40px_-10px_rgba(182,144,90,0.55)] hover:ring-2 hover:ring-gold/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold"
                 >
                   <Image
                     src={image.src}

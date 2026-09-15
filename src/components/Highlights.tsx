@@ -35,7 +35,7 @@ export default function Highlights() {
         <div className="grid grid-cols-2 gap-x-8 gap-y-14 sm:grid-cols-3 lg:grid-cols-5 lg:gap-x-10">
           {highlights.map((item) => (
             <div key={item.title} className="group flex flex-col items-center gap-4 text-center">
-              <span className="flex h-16 w-16 items-center justify-center rounded-full bg-cream-soft text-gold-dark transition-colors group-hover:bg-ink group-hover:text-gold">
+              <span className="flex h-16 w-16 items-center justify-center rounded-full bg-cream-soft text-gold-dark shadow-[0_0_0_-4px_rgba(182,144,90,0)] transition-all duration-300 group-hover:-translate-y-1 group-hover:bg-gradient-to-br group-hover:from-gold group-hover:to-rose group-hover:text-cream group-hover:shadow-[0_10px_30px_-6px_rgba(182,144,90,0.7)]">
                 <item.icon className="h-6 w-6" />
               </span>
               <p className="font-serif text-lg font-semibold text-ink">{item.title}</p>
