@@ -79,7 +79,7 @@ export default function Footer() {
 
           <div className="lg:justify-self-center">
             <p className="font-serif text-sm font-semibold uppercase tracking-wider text-gold">Öffnungszeiten</p>
-            <ul className="mt-3 space-y-2 text-sm text-cream/65">
+            <ul className="mt-3 max-w-[230px] space-y-2 text-sm text-cream/65">
               {officeHours.map((row) => (
                 <li key={row.days} className="flex justify-between gap-4">
                   <span>{row.days}</span>
