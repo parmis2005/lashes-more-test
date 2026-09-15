@@ -15,7 +15,7 @@ export default function Reviews() {
   const total = ratingSummary.count;
 
   return (
-    <section id="bewertungen" className="bg-cream-soft/60 py-20 sm:py-28">
+    <section id="bewertungen" className="bg-cream-soft/60 pt-12 pb-20 sm:pt-16 sm:pb-28">
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
         <div className="grid gap-12 lg:grid-cols-[minmax(0,340px)_1fr] lg:gap-16">
           <div>
