@@ -99,7 +99,6 @@ export default function Gallery() {
                 />
               </div>
             </div>
-            <div className="absolute -bottom-4 -left-4 -z-10 h-24 w-24 animate-float-slow rounded-2xl border border-gold/30 bg-gradient-to-br from-gold/20 to-rose/20 blur-[1px]" />
           </div>
         </div>
 
