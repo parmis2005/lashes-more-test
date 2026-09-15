@@ -15,15 +15,15 @@ export default function Footer() {
 
   return (
     <footer className="bg-ink text-cream">
-      <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:px-10">
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mx-auto max-w-5xl px-5 py-14 sm:px-8 lg:px-10">
+        <div className="grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr_1fr]">
           <div>
             <p className="font-script text-3xl text-glow-gradient">Lashes&amp;more</p>
-            <p className="mt-3 max-w-xs text-sm leading-relaxed text-cream/60">
+            <p className="mt-2 max-w-xs text-sm leading-relaxed text-cream/60">
               Wimpern, Kosmetik, Permanent Make-up und ästhetische Behandlungen in Wuppertal.
               {" "}{site.slogan}
             </p>
-            <div className="mt-5 flex items-center gap-3">
+            <div className="mt-4 flex items-center gap-3">
               <a
                 href={site.instagramUrl}
                 target="_blank"
@@ -65,7 +65,7 @@ export default function Footer() {
 
           <div>
             <p className="font-serif text-sm font-semibold uppercase tracking-wider text-gold">Standorte</p>
-            <ul className="mt-4 space-y-4 text-sm text-cream/65">
+            <ul className="mt-3 space-y-3 text-sm text-cream/65">
               {locations.map((location) => (
                 <li key={location.id}>
                   <p className="text-cream">{location.name}</p>
@@ -77,7 +77,7 @@ export default function Footer() {
 
           <div>
             <p className="font-serif text-sm font-semibold uppercase tracking-wider text-gold">Öffnungszeiten</p>
-            <ul className="mt-4 space-y-2 text-sm text-cream/65">
+            <ul className="mt-3 space-y-2 text-sm text-cream/65">
               {officeHours.map((row) => (
                 <li key={row.days} className="flex justify-between gap-4">
                   <span>{row.days}</span>
@@ -89,7 +89,7 @@ export default function Footer() {
 
           <div>
             <p className="font-serif text-sm font-semibold uppercase tracking-wider text-gold">Schnellzugriff</p>
-            <ul className="mt-4 space-y-2 text-sm text-cream/65">
+            <ul className="mt-3 space-y-2 text-sm text-cream/65">
               {navLinks.map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="hover:text-cream">
@@ -118,7 +118,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-cream/10 pt-6 text-xs text-cream/50 sm:flex-row">
+        <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-cream/10 pt-6 text-xs text-cream/50 sm:flex-row">
           <p>&copy; {year} Lashes&amp;more, Wuppertal. Alle Rechte vorbehalten.</p>
           <div className="flex gap-5">
             <Link href="/impressum" className="hover:text-cream">Impressum</Link>
