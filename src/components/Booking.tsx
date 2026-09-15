@@ -1,6 +1,11 @@
+"use client";
+
+import { useState } from "react";
 import { bookingCategories, bookingNotice, site } from "@/lib/data";
-import { IconCalendar, IconUser } from "./icons";
+import { IconCalendar, IconChevronDown, IconUser } from "./icons";
 import BookingTrigger from "./BookingTrigger";
+
+const INITIAL_VISIBLE_COUNT = 6;
 
 function bookingCategoryInitials(title: string) {
   return title
@@ -16,6 +21,12 @@ const sortedBookingCategories = [...bookingCategories].sort((a, b) =>
 );
 
 export default function Booking() {
+  const [showAll, setShowAll] = useState(false);
+  const visibleCategories = showAll
+    ? sortedBookingCategories
+    : sortedBookingCategories.slice(0, INITIAL_VISIBLE_COUNT);
+  const hiddenCount = sortedBookingCategories.length - INITIAL_VISIBLE_COUNT;
+
   return (
     <section id="online-buchung" className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28 lg:px-10">
       <div className="mx-auto max-w-3xl text-center">
@@ -47,7 +58,7 @@ export default function Booking() {
       </div>
 
       <div className="mt-14 grid gap-5 lg:grid-cols-2">
-        {sortedBookingCategories.map((category) => (
+        {visibleCategories.map((category) => (
           <details
             key={category.id}
             className="rounded-2xl border border-ink/10 bg-cream-soft/55 p-6 shadow-sm transition-shadow duration-300 open:border-gold/35 open:bg-cream-soft open:shadow-[0_0_30px_-14px_rgba(182,144,90,0.6)]"
@@ -88,6 +99,19 @@ export default function Booking() {
           </details>
         ))}
       </div>
+
+      {!showAll && hiddenCount > 0 ? (
+        <div className="mt-8 flex justify-center">
+          <button
+            type="button"
+            onClick={() => setShowAll(true)}
+            className="inline-flex items-center gap-2 rounded-full border border-ink/20 px-7 py-3.5 text-sm font-medium text-ink transition-colors hover:border-gold-dark hover:text-gold-dark"
+          >
+            Alle {sortedBookingCategories.length} Kategorien anzeigen
+            <IconChevronDown className="h-4 w-4" />
+          </button>
+        </div>
+      ) : null}
 
       <div className="mt-8 rounded-2xl border border-dashed border-ink/15 bg-cream px-6 py-5 text-sm leading-relaxed text-ink/60">
         {bookingNotice.finePrint}
