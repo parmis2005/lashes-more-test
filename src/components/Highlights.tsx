@@ -6,8 +6,8 @@ import { IconCalendar, IconClock, IconMapPin, IconStar } from "./icons";
 const highlights = [
   {
     icon: IconStar,
-    title: "4,9 von 5 Sternen",
-    description: "Über 690 echte Kundenbewertungen auf Salonkee.",
+    title: "4,8 von 5 Sternen",
+    description: "Über 510 echte Kundenbewertungen auf BuchDirekt.",
   },
   {
     icon: IconCalendar,
@@ -17,12 +17,12 @@ const highlights = [
   {
     icon: IconClock,
     title: "Öffnungszeiten laut Live-Seite",
-    description: "Montag bis Freitag bis 21 Uhr, Samstag bis 20 Uhr.",
+    description: "Montag bis Freitag bis 19 Uhr, Samstag bis 15 Uhr.",
   },
   {
     icon: IconMapPin,
-    title: "Zwei Studios in Wuppertal",
-    description: "Anhalter Straße 8 & Gewerbeschulstraße 95.",
+    title: "Zwei Studios in Musterstadt",
+    description: "Blütenweg 4 & Ahornallee 21.",
   },
 ];
 

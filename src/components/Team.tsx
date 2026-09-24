@@ -17,7 +17,7 @@ export default function Team() {
 
         <div className="mt-14 grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
           <div className="rounded-[2rem] border border-ink/8 bg-cream p-8 shadow-sm sm:p-10">
-            <h3 className="font-serif text-2xl font-semibold text-ink">Was dich bei Lashes&amp;more erwartet</h3>
+            <h3 className="font-serif text-2xl font-semibold text-ink">Was dich bei Belle&amp;more erwartet</h3>
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
               {teamValues.map((value) => (
                 <div
@@ -77,7 +77,7 @@ export default function Team() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center rounded-full border border-cream/15 px-6 py-3 text-sm font-medium text-cream transition-colors hover:border-gold hover:text-gold"
               >
-                Mein Konto bei Lashes&amp;more
+                Mein Konto bei Belle&amp;more
               </a>
             </div>
           </div>

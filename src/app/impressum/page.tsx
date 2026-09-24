@@ -3,7 +3,7 @@ import Link from "next/link";
 import { legalBusiness, locations, site } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Impressum | Lashes&more",
+  title: "Impressum | Belle&more",
 };
 
 export default function ImpressumPage() {

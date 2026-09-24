@@ -22,20 +22,20 @@ const body = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Lashes&more Wuppertal | Wimpern, Kosmetik & Permanent Make-up",
+  title: "Belle&more Musterstadt | Wimpern, Kosmetik & Permanent Make-up",
   description:
-    "Lashes&more in Wuppertal: Wimpernverlängerung, Lashlifting, Permanent Make-up, Kosmetik und ästhetische Behandlungen. 4,9 von 5 Sternen aus über 690 Bewertungen. Zwei Studios in Wuppertal.",
+    "Belle&more in Musterstadt: Wimpernverlängerung, Lashlifting, Permanent Make-up, Kosmetik und ästhetische Behandlungen. 4,8 von 5 Sternen aus über 510 Bewertungen. Zwei Studios in Musterstadt.",
   keywords: [
-    "Wimpernverlängerung Wuppertal",
-    "Lashes and more",
-    "Permanent Make-up Wuppertal",
-    "Kosmetikstudio Wuppertal",
-    "Lashlifting Wuppertal",
+    "Wimpernverlängerung Musterstadt",
+    "Belle and more",
+    "Permanent Make-up Musterstadt",
+    "Kosmetikstudio Musterstadt",
+    "Lashlifting Musterstadt",
   ],
   openGraph: {
-    title: "Lashes&more Wuppertal",
+    title: "Belle&more Musterstadt",
     description:
-      "Wimpern, Kosmetik, Permanent Make-up und ästhetische Behandlungen in Wuppertal. Besonders gut.",
+      "Wimpern, Kosmetik, Permanent Make-up und ästhetische Behandlungen in Musterstadt. Besonders gut.",
     locale: "de_DE",
     type: "website",
   },

@@ -56,7 +56,7 @@ export default function Gallery() {
 
             <p className="mt-6 leading-relaxed text-ink/70">{site.officialDescription}</p>
             <p className="mt-4 leading-relaxed text-ink/70">
-              In unseren Studios auf der {locations[0].street} und der {locations[1].street} erwarten
+              In unseren Studios auf dem {locations[0].street} und der {locations[1].street} erwarten
               dich moderne Behandlungsräume, eine gemütliche Empfangslounge und ein Team, das sich
               Zeit für dich nimmt.
             </p>
@@ -83,7 +83,7 @@ export default function Gallery() {
               <div className="relative mt-8 aspect-[3/4] overflow-hidden rounded-2xl shadow-lg shadow-ink/10">
                 <Image
                   src="/images/gallery/studio-2-schaufenster.jpg"
-                  alt="Schaufenster mit Leistungsübersicht, Studio 2 Gewerbeschulstraße 95"
+                  alt="Schaufenster mit Leistungsübersicht, Studio 2 Ahornallee 21"
                   fill
                   sizes="(min-width: 1024px) 22vw, 45vw"
                   className="object-cover"
@@ -92,7 +92,7 @@ export default function Gallery() {
               <div className="relative aspect-[3/4] overflow-hidden rounded-2xl shadow-lg shadow-ink/10">
                 <Image
                   src="/images/gallery/studio-1-flur.jpg"
-                  alt="Eleganter Flur mit Glastüren, Studio 1 Anhalter Straße 8"
+                  alt="Eleganter Flur mit Glastüren, Studio 1 Blütenweg 4"
                   fill
                   sizes="(min-width: 1024px) 22vw, 45vw"
                   className="object-cover"

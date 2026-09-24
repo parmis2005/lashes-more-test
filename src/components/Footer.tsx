@@ -19,9 +19,9 @@ export default function Footer() {
         <div className="grid gap-y-10 lg:grid-cols-[auto_1fr_auto] lg:items-start lg:gap-x-10">
           <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-16">
             <div>
-              <p className="font-script text-3xl text-glow-gradient">Lashes&amp;more</p>
+              <p className="font-script text-3xl text-glow-gradient">Belle&amp;more</p>
               <p className="mt-2 max-w-xs text-sm leading-relaxed text-cream/60">
-                Wimpern, Kosmetik, Permanent Make-up und ästhetische Behandlungen in Wuppertal.
+                Wimpern, Kosmetik, Permanent Make-up und ästhetische Behandlungen in Musterstadt.
                 {" "}{site.slogan}
               </p>
               <div className="mt-4 flex items-center gap-3">
@@ -121,7 +121,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-cream/10 pt-6 text-xs text-cream/50 sm:flex-row">
-          <p>&copy; {year} Lashes&amp;more, Wuppertal. Alle Rechte vorbehalten.</p>
+          <p>&copy; {year} Belle&amp;more, Musterstadt. Alle Rechte vorbehalten.</p>
           <div className="flex gap-5">
             <Link href="/impressum" className="hover:text-cream">Impressum</Link>
             <Link href="/datenschutz" className="hover:text-cream">Datenschutz</Link>

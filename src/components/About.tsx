@@ -19,7 +19,7 @@ export default function About() {
 
           <div className="absolute -left-4 -top-5 hidden items-center gap-2 rounded-full bg-ink px-5 py-3 text-cream shadow-[0_0_30px_-8px_rgba(182,144,90,0.7)] sm:flex">
             <IconSparkle className="h-4 w-4 animate-glow-pulse text-gold" />
-            <span className="text-sm font-medium whitespace-nowrap">Lashes&amp;more Academy</span>
+            <span className="text-sm font-medium whitespace-nowrap">Belle&amp;more Academy</span>
           </div>
         </div>
 
@@ -30,11 +30,11 @@ export default function About() {
           </h2>
           <div className="mt-6 h-0.5 w-14 bg-gradient-to-r from-gold via-rose to-gold-dark" />
           <p className="mt-6 leading-relaxed text-ink/70">
-            {site.officialDescription} Bei Lashes&amp;more erwartet dich professionelle Beauty-
+            {site.officialDescription} Bei Belle&amp;more erwartet dich professionelle Beauty-
             Arbeit in herzlicher, ehrlicher und entspannter Atmosphäre.
           </p>
           <p className="mt-4 leading-relaxed text-ink/70">
-            In unseren Studios auf der Anhalter Straße und der Gewerbeschulstraße bieten wir dir
+            In unseren Studios auf dem Blütenweg und der Ahornallee bieten wir dir
             Wimpernverlängerung, Lashlifting, Browlifting, Microblading, Permanent Make-up,
             Gesichtsbehandlungen, Laser-Treatments und weitere ästhetische Services.
           </p>
@@ -43,10 +43,10 @@ export default function About() {
           <div className="mt-8 grid grid-cols-2 gap-6 border-t border-ink/10 pt-8">
             <div>
               <p className="font-serif text-3xl font-semibold text-glow-gradient">2</p>
-              <p className="text-sm text-ink/60">Studios in Wuppertal</p>
+              <p className="text-sm text-ink/60">Studios in Musterstadt</p>
             </div>
             <div>
-              <p className="font-serif text-3xl font-semibold text-glow-gradient">690+</p>
+              <p className="font-serif text-3xl font-semibold text-glow-gradient">510+</p>
               <p className="text-sm text-ink/60">zufriedene Kund:innen</p>
             </div>
           </div>

@@ -1,11 +1,12 @@
-# Lashes&more Wuppertal
+# Belle&more Musterstadt
 
-Offizielle Website für Lashes&more – Wimpernverlängerung, Lashlifting, Permanent
-Make-up, Kosmetik und ästhetische Behandlungen in Wuppertal. Gebaut mit
+Demo-Website für das fiktive Studio Belle&more – Wimpernverlängerung, Lashlifting, Permanent
+Make-up, Kosmetik und ästhetische Behandlungen in Musterstadt. Gebaut mit
 [Next.js](https://nextjs.org) (App Router), TypeScript und Tailwind CSS.
 
-Alle Inhalte (Texte, Bewertungen, Bilder, Standorte, Öffnungszeiten, Social
-Media) basieren auf den öffentlich zugänglichen Informationen des Salons.
+Alle Inhalte (Texte, Bewertungen, Bilder, Standorte, Öffnungszeiten, Preise, Kontaktdaten,
+Social Media) sind frei erfunden und dienen ausschließlich als Demo-/Testdaten. Es besteht kein
+Bezug zu einem real existierenden Unternehmen.
 
 ## Entwicklung starten
 
@@ -31,14 +32,14 @@ npm run lint    # ESLint prüfen
   Galerie, Bewertungen, Standorte/Kontakt, Footer, …)
 - `src/lib/data.ts` – Zentrale Inhalte (Texte, Preise, Bewertungen, Kontakt-
   und Standortdaten)
-- `public/images` – Echte Fotos der beiden Studios
+- `public/images` – Platzhalter-/Demo-Fotos für die beiden fiktiven Studios
 
 ## Hinweise
 
-Die Preise für Wimpern-, Brow- und Kosmetikbehandlungen werden individuell bei
-der Beratung besprochen und sind daher als „auf Anfrage“ hinterlegt. Preise für
-die ästhetischen Behandlungen der Heilpraktikerin sind hinterlegt, da diese
-öffentlich einsehbar sind.
+Preise, Adressen, Namen und Kontaktdaten sind frei erfunden und nur als Platzhalter für die
+Demo gedacht. Die Bild- und Videodateien in `public/images` und `public/videos` sind bestehende
+Platzhalter-Assets; für eine echte Nutzung sollten sie durch eigene, lizenzierte Fotos/Videos
+ersetzt werden.
 
-Impressum und Datenschutzerklärung sind als Startpunkt vorbereitet und sollten
-vor einem echten Livegang rechtlich geprüft und vervollständigt werden.
+Impressum und Datenschutzerklärung sind als Startpunkt vorbereitet und sollten vor einem echten
+Livegang rechtlich geprüft und vervollständigt werden.

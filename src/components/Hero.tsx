@@ -29,11 +29,11 @@ export default function Hero() {
         <div>
           <p className={`inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/10 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-gold-dark shadow-[0_0_25px_-8px_rgba(182,144,90,0.6)] ${fade("delay-0")}`}>
             <IconStar className="h-3 w-3 text-gold" />
-            Wimpern · Kosmetik · Ästhetik in Wuppertal
+            Wimpern · Kosmetik · Ästhetik in Musterstadt
           </p>
 
           <h1 className={`mt-5 text-4xl leading-[1.1] text-ink sm:text-5xl lg:mt-6 lg:text-6xl ${fade("delay-150")}`}>
-            <span className="font-serif font-semibold">Lashes</span>
+            <span className="font-serif font-semibold">Belle</span>
             <span className="font-script text-glow-gradient">&amp;more</span>
           </h1>
           <p className={`mt-3 font-script text-3xl text-gold-dark sm:text-4xl ${fade("delay-150")}`}>{site.slogan}</p>
@@ -74,7 +74,7 @@ export default function Hero() {
           <div className={`mt-6 hidden flex-wrap items-center gap-x-8 gap-y-3 text-sm text-ink/70 sm:flex ${fade("delay-500")}`}>
             <div className="flex items-center gap-2">
               <IconMapPin className="h-4 w-4 text-gold-dark" />
-              <span>{locations[0].street}, Wuppertal</span>
+              <span>{locations[0].street}, Musterstadt</span>
             </div>
             <div className="flex items-center gap-2">
               <IconClock className="h-4 w-4 text-gold-dark" />
@@ -87,10 +87,10 @@ export default function Hero() {
           <div className="pointer-events-none absolute -inset-3 -z-10 rounded-[2.5rem] bg-gradient-to-br from-gold/40 via-rose/30 to-gold-light/40 opacity-70 blur-xl" />
           <div className="relative overflow-hidden rounded-[2rem] bg-cream-soft p-2 shadow-2xl shadow-ink/10 ring-1 ring-ink/5 sm:p-3">
             <Image
-              src="/images/team-sharp.png"
-              alt="Team von Lashes&more Wuppertal vor dem Studio"
-              width={1607}
-              height={979}
+              src="/images/team-sharp.jpg"
+              alt="Team von Belle&more Musterstadt vor dem Studio"
+              width={1600}
+              height={2400}
               priority
               unoptimized
               sizes="(min-width: 1024px) 45vw, 92vw"

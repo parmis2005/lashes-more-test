@@ -22,7 +22,7 @@ export default function LocationsContact() {
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-xs font-medium uppercase tracking-[0.25em] text-gold">Standorte &amp; Kontakt</p>
           <h2 className="mt-3 font-serif text-3xl font-semibold text-cream sm:text-4xl">
-            Besuch uns in Wuppertal
+            Besuch uns in Musterstadt
           </h2>
           <div className="mx-auto mt-6 h-0.5 w-14 bg-gradient-to-r from-gold via-rose to-gold-dark" />
           <p className="mt-6 leading-relaxed text-cream/60">{officeHoursNote}</p>

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { legalBusiness, locations, site } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Datenschutz | Lashes&more",
+  title: "Datenschutz | Belle&more",
 };
 
 export default function DatenschutzPage() {
@@ -42,10 +42,10 @@ export default function DatenschutzPage() {
         </section>
 
         <section>
-          <h2 className="font-serif text-lg font-semibold text-ink">3. Onlinebuchung über Planity</h2>
+          <h2 className="font-serif text-lg font-semibold text-ink">3. Onlinebuchung über {site.bookingPartnerName}</h2>
           <p className="mt-2">
-            Für Terminbuchung und Kundenkonto verlinken wir auf die offizielle Lashes&amp;more-
-            Buchungsseite sowie auf Dienste von Planity. Beim Aufruf dieser externen Seiten gelten
+            Für Terminbuchung und Kundenkonto verlinken wir auf die offizielle Belle&amp;more-
+            Buchungsseite sowie auf Dienste von {site.bookingPartnerName}. Beim Aufruf dieser externen Seiten gelten
             die Datenschutz- und Nutzungsbedingungen des jeweiligen Anbieters. Weitere Informationen
             findest du unter{" "}
             <a
