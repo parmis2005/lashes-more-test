@@ -124,14 +124,13 @@ export default function Header() {
               <IconCalendar className="h-4 w-4" />
               Online Terminbuchung
             </button>
-            <a
-              href={site.whatsappHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full border border-ink/15 px-5 py-3.5 text-center text-sm font-medium text-ink"
+            <button
+              type="button"
+              disabled
+              className="cursor-not-allowed rounded-full border border-ink/10 px-5 py-3.5 text-center text-sm font-medium text-ink/35"
             >
               WhatsApp Anfrage
-            </a>
+            </button>
           </div>
         </div>
       )}

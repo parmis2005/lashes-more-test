@@ -34,7 +34,7 @@ export default function About() {
             Arbeit in herzlicher, ehrlicher und entspannter Atmosphäre.
           </p>
           <p className="mt-4 leading-relaxed text-ink/70">
-            In unseren Studios auf dem Blütenweg und der Ahornallee bieten wir dir
+            An unserem Standort auf dem Blütenweg bieten wir dir
             Wimpernverlängerung, Lashlifting, Browlifting, Microblading, Permanent Make-up,
             Gesichtsbehandlungen, Laser-Treatments und weitere ästhetische Services.
           </p>
@@ -43,7 +43,7 @@ export default function About() {
           <div className="mt-8 grid grid-cols-2 gap-6 border-t border-ink/10 pt-8">
             <div>
               <p className="font-serif text-3xl font-semibold text-glow-gradient">2</p>
-              <p className="text-sm text-ink/60">Studios in Musterstadt</p>
+              <p className="text-sm text-ink/60">Standort in Musterstadt</p>
             </div>
             <div>
               <p className="font-serif text-3xl font-semibold text-glow-gradient">510+</p>

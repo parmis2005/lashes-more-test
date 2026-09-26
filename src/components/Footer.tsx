@@ -43,15 +43,15 @@ export default function Footer() {
                 >
                   <IconFacebook className="h-5 w-5" />
                 </a>
-                <a
-                  href={site.whatsappHref}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="WhatsApp"
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-cream/20 text-cream transition-all duration-300 hover:border-gold hover:text-gold hover:shadow-[0_0_20px_-4px_rgba(182,144,90,0.8)]"
+                <button
+                  type="button"
+                  disabled
+                  aria-label="WhatsApp derzeit deaktiviert"
+                  title="WhatsApp derzeit deaktiviert"
+                  className="flex h-10 w-10 cursor-not-allowed items-center justify-center rounded-full border border-cream/10 text-cream/35"
                 >
                   <IconWhatsApp className="h-5 w-5" />
-                </a>
+                </button>
                 <a
                   href={site.tiktokUrl}
                   target="_blank"
@@ -65,7 +65,7 @@ export default function Footer() {
             </div>
 
             <div>
-              <p className="font-serif text-sm font-semibold uppercase tracking-wider text-gold">Standorte</p>
+              <p className="font-serif text-sm font-semibold uppercase tracking-wider text-gold">Standort</p>
               <ul className="mt-3 space-y-3 text-sm text-cream/65">
                 {locations.map((location) => (
                   <li key={location.id}>

@@ -63,7 +63,7 @@ export default function DatenschutzPage() {
         <section>
           <h2 className="font-serif text-lg font-semibold text-ink">4. Eingebundene Karten</h2>
           <p className="mt-2">
-            Zur Anzeige unserer Standorte binden wir Google Maps ein. Beim Aufruf der jeweiligen
+            Zur Anzeige unseres Standorts binden wir Google Maps ein. Beim Aufruf der jeweiligen
             Sektion können Daten wie deine IP-Adresse an Google übermittelt werden.
           </p>
         </section>

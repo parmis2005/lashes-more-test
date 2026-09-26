@@ -24,7 +24,7 @@ const body = Poppins({
 export const metadata: Metadata = {
   title: "Belle&more Musterstadt | Wimpern, Kosmetik & Permanent Make-up",
   description:
-    "Belle&more in Musterstadt: Wimpernverlängerung, Lashlifting, Permanent Make-up, Kosmetik und ästhetische Behandlungen. 4,8 von 5 Sternen aus über 510 Bewertungen. Zwei Studios in Musterstadt.",
+    "Belle&more in Musterstadt: Wimpernverlängerung, Lashlifting, Permanent Make-up, Kosmetik und ästhetische Behandlungen. 4,8 von 5 Sternen aus über 510 Bewertungen. Ein Standort in Musterstadt.",
   keywords: [
     "Wimpernverlängerung Musterstadt",
     "Belle and more",

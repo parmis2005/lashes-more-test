@@ -7,7 +7,7 @@ export default function CtaBanner() {
     <section className="relative overflow-hidden py-24 sm:py-28">
       <div
         className="absolute inset-0 -z-20 bg-cover bg-center bg-fixed"
-        style={{ backgroundImage: "url('/images/gallery/doppelbehandlung.jpg')" }}
+        style={{ backgroundImage: "url('/images/pinterest/aesthetic-room.png')" }}
       />
       <div className="absolute inset-0 -z-10 bg-gradient-to-br from-ink/90 via-ink/75 to-bordeaux-dark/50" />
       <Sparkles />
@@ -20,7 +20,7 @@ export default function CtaBanner() {
           Bereit für deinen nächsten Termin?
         </h2>
         <p className="max-w-xl leading-relaxed text-cream/75">
-          Wähle dein Angebot und einen freien Termin direkt in der Demo oder nutze WhatsApp für
+          Wähle dein Angebot und einen freien Termin direkt in der Demo oder nutze Telefon und E-Mail für
           Leistungen, die individuell abgestimmt werden sollen.
         </p>
         <div className="mt-2 flex flex-wrap items-center justify-center gap-4">
@@ -29,14 +29,13 @@ export default function CtaBanner() {
           >
             Jetzt online buchen
           </BookingTrigger>
-          <a
-            href={site.whatsappHref}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-full border border-cream/40 px-7 py-3.5 text-sm font-medium text-cream transition-colors hover:bg-cream/10 sm:text-base"
+          <button
+            type="button"
+            disabled
+            className="cursor-not-allowed rounded-full border border-cream/15 px-7 py-3.5 text-sm font-medium text-cream/35 sm:text-base"
           >
             Per WhatsApp anfragen
-          </a>
+          </button>
         </div>
         <p className="mt-2 text-xs tracking-wide text-cream/50">
           Tel: {site.phoneDisplay} · {site.emailDisplay}

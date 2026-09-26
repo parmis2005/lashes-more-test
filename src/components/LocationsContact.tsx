@@ -20,7 +20,7 @@ export default function LocationsContact() {
       <div className="pointer-events-none absolute left-1/3 bottom-10 -z-0 h-56 w-56 animate-float-slow rounded-full bg-emerald/10 blur-3xl" />
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="text-xs font-medium uppercase tracking-[0.25em] text-gold">Standorte &amp; Kontakt</p>
+          <p className="text-xs font-medium uppercase tracking-[0.25em] text-gold">Standort &amp; Kontakt</p>
           <h2 className="mt-3 font-serif text-3xl font-semibold text-cream sm:text-4xl">
             Besuch uns in Musterstadt
           </h2>
@@ -28,7 +28,7 @@ export default function LocationsContact() {
           <p className="mt-6 leading-relaxed text-cream/60">{officeHoursNote}</p>
         </div>
 
-        <div className="mt-14 grid gap-8 lg:grid-cols-2">
+        <div className="mx-auto mt-14 grid max-w-3xl gap-8">
           {locations.map((location) => (
             <div key={location.id} className="overflow-hidden rounded-2xl border border-cream/10 bg-cream/[0.04] shadow-sm backdrop-blur-sm transition-all duration-300 hover:border-gold/30 hover:shadow-[0_0_35px_-12px_rgba(182,144,90,0.6)]">
               <div className="h-56 w-full sm:h-64">
@@ -89,14 +89,13 @@ export default function LocationsContact() {
               <a href={site.emailHref} className="inline-flex items-center gap-2 hover:text-cream">
                 <IconMail className="h-4 w-4" /> {site.emailDisplay}
               </a>
-              <a
-                href={site.whatsappHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 hover:text-cream"
+              <button
+                type="button"
+                disabled
+                className="inline-flex cursor-not-allowed items-center gap-2 text-left text-cream/35"
               >
                 <IconWhatsApp className="h-4 w-4" /> WhatsApp schreiben
-              </a>
+              </button>
               <a
                 href={site.instagramUrl}
                 target="_blank"

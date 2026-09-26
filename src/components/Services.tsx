@@ -1,26 +1,26 @@
 import Image from "next/image";
-import { serviceCategories, site } from "@/lib/data";
+import { serviceCategories } from "@/lib/data";
 import BookingTrigger from "./BookingTrigger";
 
 const highlightMeta: Record<string, { src: string; alt: string; tag: string }> = {
   "lashes-brows": {
-    src: "/images/gallery/liege-branded.jpg",
-    alt: "Behandlungsliege für Wimpern und Brows",
+    src: "/images/pinterest/lashes-brows.png",
+    alt: "Pinterest-inspirierter Behandlungsraum für Wimpern und Brows",
     tag: "Bestseller",
   },
   "skin-packages": {
-    src: "/images/gallery/behandlung-gesicht.jpg",
-    alt: "Gesichtsbehandlung im Studio",
+    src: "/images/pinterest/skin-facial.png",
+    alt: "Pinterest-inspiriertes Facial Setup im Beauty Studio",
     tag: "Beauty-Pakete",
   },
   "pmu-plasma": {
-    src: "/images/gallery/pigmentierung.jpg",
-    alt: "Pigmentierungsbereich für Permanent Make-up",
+    src: "/images/pinterest/permanent-makeup.png",
+    alt: "Pinterest-inspirierter Permanent Make-up Arbeitsplatz",
     tag: "Permanent Make-up",
   },
   aesthetic: {
-    src: "/images/gallery/studio-2-behandlung.jpg",
-    alt: "Behandlungsbereich für ästhetische Treatments",
+    src: "/images/pinterest/aesthetic-room.png",
+    alt: "Pinterest-inspirierter Raum für ästhetische Treatments",
     tag: "Mit Heilpraktikerin",
   },
 };
@@ -47,15 +47,15 @@ export default function Services() {
           </p>
         </div>
 
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {highlightedServices.map((category) => {
             const meta = highlightMeta[category.id];
             return (
               <div
                 key={category.id}
-                className="group relative overflow-hidden rounded-2xl bg-cream-soft shadow-sm ring-1 ring-ink/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_45px_-12px_rgba(182,144,90,0.5)] hover:ring-gold/40"
+                className="group relative overflow-hidden rounded-[8px] bg-cream-soft shadow-sm ring-1 ring-ink/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_45px_-12px_rgba(182,144,90,0.5)] hover:ring-gold/40"
               >
-                <div className="relative aspect-[3/4] overflow-hidden">
+                <div className="relative aspect-[2/3] overflow-hidden">
                   <Image
                     src={meta.src}
                     alt={meta.alt}
@@ -63,19 +63,23 @@ export default function Services() {
                     sizes="(min-width: 1024px) 23vw, (min-width: 640px) 46vw, 92vw"
                     className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                   />
-                  <span className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/0 to-ink/0" />
-                  <span className="absolute left-4 top-4 rounded-full bg-gradient-to-r from-gold to-rose px-3 py-1 text-[10px] font-medium uppercase tracking-wider text-cream shadow-[0_4px_14px_-4px_rgba(182,144,90,0.8)]">
+                  <span className="absolute inset-0 bg-gradient-to-t from-ink/75 via-ink/15 to-transparent" />
+                  <span className="absolute left-4 top-4 rounded-full bg-cream/95 px-3 py-1 text-[10px] font-medium uppercase tracking-wider text-bordeaux shadow-[0_8px_22px_-10px_rgba(34,16,25,0.7)]">
                     {meta.tag}
                   </span>
+                  <div className="absolute inset-x-0 bottom-0 p-5">
+                    <h3 className="font-serif text-xl font-semibold leading-tight text-cream">
+                      {category.title}
+                    </h3>
+                    <p className="mt-2 text-xs uppercase tracking-[0.16em] text-gold-light">
+                      {category.items.length} Behandlungen
+                    </p>
+                  </div>
                 </div>
 
-                <div className="p-5">
-                  <h3 className="font-serif text-xl font-semibold text-ink">{category.title}</h3>
+                <div className="p-4">
                   <p className="mt-2 text-sm leading-relaxed text-ink/65 line-clamp-3">
                     {category.description}
-                  </p>
-                  <p className="mt-3 text-xs uppercase tracking-[0.15em] text-gold-dark">
-                    {category.items.length} Behandlungen in der Übersicht
                   </p>
                 </div>
               </div>
@@ -86,7 +90,7 @@ export default function Services() {
         <div className="mt-12 flex flex-col items-center gap-4 text-center">
           <p className="text-ink/60">
             Viele Leistungen sind direkt online buchbar. Für individuelle Rückfragen oder nicht
-            online buchbare Services erreichst du uns zusätzlich per WhatsApp.
+            online buchbare Services erreichst du uns telefonisch oder per E-Mail.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <BookingTrigger className="shine-btn rounded-full bg-ink px-7 py-3.5 text-sm font-medium text-cream shadow-[0_0_25px_-10px_rgba(182,144,90,0.7)] transition-all hover:bg-gradient-to-r hover:from-gold-dark hover:to-bordeaux-dark">
@@ -98,14 +102,13 @@ export default function Services() {
             >
               Komplette Preisliste ansehen
             </a>
-            <a
-              href={site.whatsappHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full border border-ink/20 px-7 py-3.5 text-sm font-medium text-ink transition-colors hover:border-gold-dark hover:text-gold-dark"
+            <button
+              type="button"
+              disabled
+              className="cursor-not-allowed rounded-full border border-ink/10 px-7 py-3.5 text-sm font-medium text-ink/35"
             >
               Per WhatsApp anfragen
-            </a>
+            </button>
           </div>
         </div>
       </div>

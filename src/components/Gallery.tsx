@@ -1,64 +1,25 @@
-"use client";
-
-import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
-import { galleryImages, locations, site, teamValues } from "@/lib/data";
-import { IconChevronLeft, IconChevronRight, IconClose } from "./icons";
-
-const studioGroups = locations.map((location) => ({
-  location,
-  images: galleryImages
-    .map((image, index) => ({ image, index }))
-    .filter(({ image }) => location.name.startsWith(image.location)),
-}));
+import { site, teamValues } from "@/lib/data";
 
 export default function Gallery() {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
-
-  const close = useCallback(() => setActiveIndex(null), []);
-  const prev = useCallback(
-    () => setActiveIndex((i) => (i === null ? null : (i - 1 + galleryImages.length) % galleryImages.length)),
-    []
-  );
-  const next = useCallback(
-    () => setActiveIndex((i) => (i === null ? null : (i + 1) % galleryImages.length)),
-    []
-  );
-
-  useEffect(() => {
-    if (activeIndex === null) return;
-    document.body.style.overflow = "hidden";
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") close();
-      if (e.key === "ArrowLeft") prev();
-      if (e.key === "ArrowRight") next();
-    };
-    window.addEventListener("keydown", onKey);
-    return () => {
-      document.body.style.overflow = "";
-      window.removeEventListener("keydown", onKey);
-    };
-  }, [activeIndex, close, prev, next]);
-
   return (
     <section id="galerie" className="overflow-hidden bg-cream-soft/50 py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
         <div className="grid items-center gap-16 lg:grid-cols-2 lg:gap-20">
           <div>
             <p className="text-xs font-medium uppercase tracking-[0.25em] text-gold-dark">
-              Unsere Studios
+              Einblicke
             </p>
             <h2 className="mt-3 font-serif text-3xl font-semibold text-ink sm:text-4xl">
               Echte Einblicke in
-              <span className="mt-1 block font-script text-3xl text-glow-gradient">unsere Studios</span>
+              <span className="mt-1 block font-script text-3xl text-glow-gradient">deine Beauty-Auszeit</span>
             </h2>
             <div className="mt-6 h-0.5 w-14 bg-gradient-to-r from-gold via-rose to-gold-dark" />
 
             <p className="mt-6 leading-relaxed text-ink/70">{site.officialDescription}</p>
             <p className="mt-4 leading-relaxed text-ink/70">
-              In unseren Studios auf dem {locations[0].street} und der {locations[1].street} erwarten
-              dich moderne Behandlungsräume, eine gemütliche Empfangslounge und ein Team, das sich
-              Zeit für dich nimmt.
+              Dich erwarten moderne Behandlungsräume, eine gemütliche Empfangslounge und ein Team,
+              das sich Zeit für dich nimmt.
             </p>
 
             <div className="mt-8 grid grid-cols-2 gap-3">
@@ -74,125 +35,39 @@ export default function Gallery() {
               href="#kontakt"
               className="shine-btn mt-10 inline-flex items-center gap-2 rounded-full bg-ink px-7 py-3.5 text-sm font-medium text-cream shadow-[0_0_25px_-10px_rgba(182,144,90,0.7)] transition-all hover:bg-gradient-to-r hover:from-gold-dark hover:to-bordeaux-dark"
             >
-              Studio besuchen
+              Kontakt aufnehmen
             </a>
           </div>
 
-          <div className="relative">
-            <div className="grid grid-cols-2 gap-4">
-              <div className="relative mt-8 aspect-[3/4] overflow-hidden rounded-2xl shadow-lg shadow-ink/10">
+          <div className="relative min-h-[560px] sm:min-h-[620px]">
+            <div className="pointer-events-none absolute -inset-4 -z-10 rounded-[2rem] bg-gradient-to-br from-gold/15 via-rose/10 to-cream-soft blur-2xl" />
+            <div className="absolute left-0 top-12 w-[54%] rotate-[-3deg] overflow-hidden rounded-[8px] bg-cream p-2 shadow-2xl shadow-ink/15 ring-1 ring-ink/5">
+              <div className="relative aspect-[2/3] overflow-hidden rounded-[6px]">
                 <Image
-                  src="/images/gallery/studio-2-schaufenster.jpg"
-                  alt="Schaufenster mit Leistungsübersicht, Studio 2 Ahornallee 21"
+                  src="/images/pinterest/reception-lounge.png"
+                  alt="Pinterest-inspirierte Empfangslounge im Beauty Studio"
                   fill
-                  sizes="(min-width: 1024px) 22vw, 45vw"
+                  sizes="(min-width: 1024px) 26vw, 52vw"
                   className="object-cover"
                 />
+                <span className="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent" />
               </div>
-              <div className="relative aspect-[3/4] overflow-hidden rounded-2xl shadow-lg shadow-ink/10">
+            </div>
+            <div className="absolute right-0 top-0 w-[54%] rotate-[3deg] overflow-hidden rounded-[8px] bg-cream p-2 shadow-2xl shadow-ink/15 ring-1 ring-ink/5">
+              <div className="relative aspect-[2/3] overflow-hidden rounded-[6px]">
                 <Image
-                  src="/images/gallery/studio-1-flur.jpg"
-                  alt="Eleganter Flur mit Glastüren, Studio 1 Blütenweg 4"
+                  src="/images/pinterest/aesthetic-room.png"
+                  alt="Pinterest-inspirierter Behandlungsraum im Beauty Studio"
                   fill
-                  sizes="(min-width: 1024px) 22vw, 45vw"
+                  sizes="(min-width: 1024px) 26vw, 52vw"
                   className="object-cover"
                 />
+                <span className="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent" />
               </div>
             </div>
           </div>
         </div>
-
-        {studioGroups.map(({ location, images }, groupIndex) => (
-          <div key={location.id} className={groupIndex === 0 ? "mt-20" : "mt-16"}>
-            <div className="flex items-baseline justify-between gap-4 border-b border-ink/10 pb-4">
-              <h3 className="font-serif text-xl font-semibold text-ink sm:text-2xl">{location.name}</h3>
-              <span className="hidden text-sm text-ink/50 sm:inline">{location.street}, {location.postalCity}</span>
-            </div>
-
-            <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-5 lg:grid-cols-4">
-              {images.map(({ image, index }) => (
-                <button
-                  key={image.src}
-                  type="button"
-                  onClick={() => setActiveIndex(index)}
-                  className="group relative aspect-[4/3] overflow-hidden rounded-2xl shadow-sm ring-1 ring-ink/5 transition-all duration-300 hover:shadow-[0_16px_40px_-10px_rgba(182,144,90,0.55)] hover:ring-2 hover:ring-gold/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold"
-                >
-                  <Image
-                    src={image.src}
-                    alt={image.alt}
-                    fill
-                    sizes="(min-width: 1024px) 24vw, (min-width: 640px) 32vw, 48vw"
-                    className="object-cover transition-transform duration-500 ease-out group-hover:scale-110"
-                  />
-                  <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/0 to-ink/0 opacity-0 transition-opacity duration-300 group-hover:opacity-90" />
-                  <span className="absolute inset-x-0 bottom-0 translate-y-2 p-4 text-left text-xs leading-snug text-cream/90 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 sm:text-sm">
-                    {image.alt}
-                  </span>
-                </button>
-              ))}
-            </div>
-          </div>
-        ))}
       </div>
-
-      {activeIndex !== null && (
-        <div
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-ink/95 px-4 py-10"
-          role="dialog"
-          aria-modal="true"
-          onClick={close}
-        >
-          <button
-            type="button"
-            aria-label="Schließen"
-            className="absolute right-5 top-5 flex h-11 w-11 items-center justify-center rounded-full border border-cream/30 text-cream hover:bg-cream/10"
-            onClick={close}
-          >
-            <IconClose className="h-5 w-5" />
-          </button>
-
-          <button
-            type="button"
-            aria-label="Vorheriges Bild"
-            className="absolute left-3 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-cream/30 text-cream hover:bg-cream/10 sm:left-6"
-            onClick={(e) => {
-              e.stopPropagation();
-              prev();
-            }}
-          >
-            <IconChevronLeft className="h-5 w-5" />
-          </button>
-
-          <div
-            className="relative aspect-[4/5] w-full max-w-md sm:aspect-[3/4] sm:max-w-lg"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <Image
-              src={galleryImages[activeIndex].src}
-              alt={galleryImages[activeIndex].alt}
-              fill
-              sizes="90vw"
-              className="rounded-xl object-contain"
-            />
-          </div>
-
-          <button
-            type="button"
-            aria-label="Nächstes Bild"
-            className="absolute right-3 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-cream/30 text-cream hover:bg-cream/10 sm:right-6"
-            onClick={(e) => {
-              e.stopPropagation();
-              next();
-            }}
-          >
-            <IconChevronRight className="h-5 w-5" />
-          </button>
-
-          <p className="absolute bottom-6 left-1/2 max-w-xl -translate-x-1/2 px-6 text-center text-sm text-cream/70">
-            {galleryImages[activeIndex].alt}
-          </p>
-        </div>
-      )}
     </section>
   );
 }

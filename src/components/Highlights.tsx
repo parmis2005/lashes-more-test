@@ -21,8 +21,8 @@ const highlights = [
   },
   {
     icon: IconMapPin,
-    title: "Zwei Studios in Musterstadt",
-    description: "Blütenweg 4 & Ahornallee 21.",
+    title: "Ein Standort in Musterstadt",
+    description: "Blütenweg 4.",
   },
 ];
 

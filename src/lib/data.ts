@@ -45,21 +45,12 @@ export type Location = {
 export const locations: Location[] = [
   {
     id: "bluetenweg",
-    name: "Studio 1 · Blütenweg",
+    name: "Blütenweg",
     street: "Blütenweg 4",
     postalCity: "42999 Musterstadt",
     mapsQuery: "Belle%26more+Bl%C3%BCtenweg+4+42999+Musterstadt",
     note:
       "Offizielle Buchungsseite, Team, Öffnungszeiten und Rechtsangaben beziehen sich auf diesen Standort.",
-  },
-  {
-    id: "ahornallee",
-    name: "Studio 2 · Ahornallee",
-    street: "Ahornallee 21",
-    postalCity: "42999 Musterstadt",
-    mapsQuery: "Belle%26more+Ahornallee+21+42999+Musterstadt",
-    note:
-      "Unser zweites Studio für Wimpern, Brows und Kosmetikbehandlungen. Termine bitte direkt anfragen.",
   },
 ];
 
@@ -74,7 +65,7 @@ export const officeHours = [
 ];
 
 export const officeHoursNote =
-  "Die Öffnungszeiten stammen von der Demo-Buchungsseite. Online buchen kannst du jederzeit, individuelle Anfragen gehen zusätzlich per WhatsApp.";
+  "Die Öffnungszeiten stammen von der Demo-Buchungsseite. Online buchen kannst du jederzeit, individuelle Anfragen gehen zusätzlich telefonisch oder per E-Mail.";
 
 export const officeHoursSummary = "Mo – Fr 09:00 – 19:00 · Sa 09:00 – 15:00";
 
@@ -358,7 +349,7 @@ export const bookingCategories: BookingCategory[] = [
     id: "stretch-marks",
     title: "Stretch Marks Treatment / Dehnungsstreifen",
     description:
-      "Bitte vorab Bild oder Video per WhatsApp schicken, damit die genaue Preisgestaltung abgestimmt werden kann.",
+      "Bitte vorab Bild oder Video senden, damit die genaue Preisgestaltung abgestimmt werden kann.",
     items: [
       { name: "1 handflächengroße Behandlung", duration: "45 Min.", price: "186 €" },
       { name: "2 handflächengroße Behandlungen", duration: "1 Std. 15 Min.", price: "266 €" },
@@ -374,7 +365,7 @@ export const bookingCategories: BookingCategory[] = [
         name: "Fineline Tattoo",
         duration: "30 Min.",
         price: "Preis auf Anfrage",
-        note: "Vorlage, Größe und Stelle bitte vorab per WhatsApp senden. Nicht direkt online buchbar.",
+        note: "Vorlage, Größe und Stelle bitte vorab senden. Nicht direkt online buchbar.",
       },
     ],
   },
@@ -390,7 +381,7 @@ export const bookingNotice = {
   description:
     "Wähle in der Demo zuerst dein Angebot und anschließend einen freien Termin direkt auf dieser Seite.",
   finePrint:
-    "Nicht online buchbare Leistungen sind in der Übersicht markiert und werden individuell per WhatsApp abgestimmt.",
+    "Nicht online buchbare Leistungen sind in der Übersicht markiert und werden individuell telefonisch oder per E-Mail abgestimmt.",
 } as const;
 
 export const teamMembers = [
@@ -422,78 +413,6 @@ export const teamValues = [
     description: "Von natürlicher Eleganz bis ausdrucksstarkem Statement-Look – passend zu deiner Persönlichkeit.",
   },
 ] as const;
-
-export type GalleryImage = {
-  src: string;
-  alt: string;
-  location: "Studio 1" | "Studio 2";
-  featured?: boolean;
-};
-
-export const galleryImages: GalleryImage[] = [
-  {
-    src: "/images/gallery/lounge-empfang.jpg",
-    alt: "Wartebereich und Empfang im Studio 1, Blütenweg",
-    location: "Studio 1",
-    featured: true,
-  },
-  {
-    src: "/images/gallery/behandlung-gesicht.jpg",
-    alt: "Behandlungsliege für Gesichtsbehandlungen, Studio 1",
-    location: "Studio 1",
-  },
-  {
-    src: "/images/gallery/studio-1-flur.jpg",
-    alt: "Eleganter Flur mit Glastüren, Studio 1 Blütenweg 4",
-    location: "Studio 1",
-  },
-  {
-    src: "/images/gallery/pedikuere.jpg",
-    alt: "Pediküre-Bereich, Blütenweg 4",
-    location: "Studio 1",
-  },
-  {
-    src: "/images/gallery/doppelbehandlung.jpg",
-    alt: "Behandlungsraum für Doppelbehandlungen, Studio 1",
-    location: "Studio 1",
-  },
-  {
-    src: "/images/gallery/theke.jpg",
-    alt: "Empfangstheke, Studio 1 Blütenweg 4",
-    location: "Studio 1",
-  },
-  {
-    src: "/images/gallery/liege-branded.jpg",
-    alt: "Behandlungsliege mit Belle&more Logo-Handtuch",
-    location: "Studio 1",
-  },
-  {
-    src: "/images/gallery/pigmentierung.jpg",
-    alt: "Pigmentierungsbereich für Permanent Make-up, Studio 1",
-    location: "Studio 1",
-  },
-  {
-    src: "/images/gallery/flur.jpg",
-    alt: "Eingangsbereich vor dem Studio, Blütenweg 4",
-    location: "Studio 1",
-  },
-  {
-    src: "/images/gallery/studio-2-empfang.jpg",
-    alt: "Empfangstheke aus Massivholz, Studio 2 Ahornallee 21",
-    location: "Studio 2",
-  },
-  {
-    src: "/images/gallery/studio-2-schaufenster.jpg",
-    alt: "Schaufenster mit Leistungsübersicht, Studio 2 Ahornallee 21",
-    location: "Studio 2",
-    featured: true,
-  },
-  {
-    src: "/images/gallery/studio-2-behandlung.jpg",
-    alt: "Behandlungsbereich, Studio 2 Ahornallee 21",
-    location: "Studio 2",
-  },
-];
 
 export const ratingSummary = {
   average: 4.8,
